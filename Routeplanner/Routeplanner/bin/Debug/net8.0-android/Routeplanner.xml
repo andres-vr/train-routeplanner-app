@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Routeplanner</name>
+    </assembly>
+    <members>
+        <member name="T:Routeplanner.ViewModel.MainPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.StartPoint">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._StartPoint"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.Destination">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._Destination"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.SelectedTime">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._SelectedTime"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.MinDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._MinDate"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.MaxDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._MaxDate"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.SelectedDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.MainPageViewModel._SelectedDate"/>
+        </member>
+        <member name="F:Routeplanner.ViewModel.MainPageViewModel.textChangeCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.MainPageViewModel.TextChangeCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.TextChangeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.MainPageViewModel.TextChange"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.MainPageViewModel.textCompleteCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.MainPageViewModel.TextCompleteCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.MainPageViewModel.TextCompleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.MainPageViewModel.TextComplete"/>.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartPoint">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartPoint" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Destination">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Destination" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MinDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MinDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MaxDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MaxDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartPoint">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartPoint" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Destination">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Destination" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MinDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MinDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MaxDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MaxDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+    </members>
+</doc>
