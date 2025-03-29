@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Routeplanner.Services;
+using Routeplanner.ViewModel;
 
 namespace Routeplanner
 {
@@ -16,6 +18,10 @@ namespace Routeplanner
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
             builder.UseMauiCommunityToolkit();
+            builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<ITripService, TripService>();
+            builder.Services.AddSingleton<APICallService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
