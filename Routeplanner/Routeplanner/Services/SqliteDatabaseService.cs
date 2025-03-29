@@ -3,7 +3,7 @@ using SQLite;
 
 namespace Routeplanner.Services
 {
-    public class SqliteMonkeyService : ITripService
+    public class SqliteMonkeyService
     {
         SQLiteAsyncConnection Database;
 

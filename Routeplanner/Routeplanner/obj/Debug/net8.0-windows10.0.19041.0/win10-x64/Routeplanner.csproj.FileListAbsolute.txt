@@ -182,3 +182,11 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-window
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.Speech.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll

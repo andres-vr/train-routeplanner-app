@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Routeplanner.Model;
 
 namespace Routeplanner.Services
 {
     public interface ITripService
     {
-
+        Task<List<Trip>> GetMonkeys();
     }
 }
