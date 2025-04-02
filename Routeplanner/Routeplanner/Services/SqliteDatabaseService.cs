@@ -3,18 +3,30 @@ using SQLite;
 
 namespace Routeplanner.Services
 {
-    public class SqliteMonkeyService
+    public class SqliteDatabaseService
     {
         SQLiteAsyncConnection Database;
 
-        public SqliteMonkeyService()
+        public SqliteDatabaseService()
         {
+
         }
 
-        public async Task<List<Station>> GetStations()
+        public async Task<List<Station>> SearchStationsAsync(string query)
         {
             await Init();
-            return await Database.Table<Station>().ToListAsync();
+            return await Database.Table<Station>()
+                         .Where(s => s.name.Contains(query))
+                         .ToListAsync();
+        }
+
+        public async Task<string> CodeToStationName(string code)
+        {
+            await Init();
+            var station = await Database.Table<Station>()
+                               .Where(s => s.code == code)
+                               .FirstOrDefaultAsync();
+            return station?.name;
         }
 
         async Task Init()

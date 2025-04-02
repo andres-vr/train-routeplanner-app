@@ -311,3 +311,4 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccat
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.core.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\libe_sqlite3.dylib
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Data.Sqlite.dll

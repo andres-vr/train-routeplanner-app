@@ -22,6 +22,7 @@ namespace Routeplanner
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ITripService, TripService>();
             builder.Services.AddSingleton<APICallService>();
+            builder.Services.AddSingleton<SqliteDatabaseService>();
 
 #if DEBUG
             builder.Logging.AddDebug();

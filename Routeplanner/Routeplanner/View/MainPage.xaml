@@ -11,6 +11,7 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            
             <Entry 
                 Placeholder="Startpunt"
                 Text="{Binding StartPoint, Mode=TwoWay}"
@@ -21,6 +22,25 @@
                         Command="{Binding CompletedCommand}"/>
                     </Entry.Behaviors>
             </Entry>
+            <VerticalStackLayout IsVisible="{Binding IsStartPointSuggestionsVisible}"
+                         BackgroundColor="White"
+                         Padding="5"
+                         Spacing="2"
+                         BindableLayout.ItemsSource="{Binding StartPointSuggestions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}"
+                       Padding="10"
+                       BackgroundColor="LightGray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectStartPointCommand}"
+                                              CommandParameter="{Binding}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
             <Entry 
                 Placeholder="Bestemming"
                 Text="{Binding Destination, Mode=TwoWay}"
@@ -31,6 +51,24 @@
                         Command="{Binding CompletedCommand}"/>
                 </Entry.Behaviors>
             </Entry>
+            <VerticalStackLayout IsVisible="{Binding IsDestinationSuggestionsVisible}"
+                         BackgroundColor="White"
+                         Padding="5"
+                         Spacing="2"
+                         BindableLayout.ItemsSource="{Binding DestinationSuggestions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}"
+                       Padding="10"
+                       BackgroundColor="LightGray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectDestinationCommand}"
+                                              CommandParameter="{Binding}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
 
             <TimePicker x:Name="TimePicker"
                         Time="{Binding SelectedTime}"

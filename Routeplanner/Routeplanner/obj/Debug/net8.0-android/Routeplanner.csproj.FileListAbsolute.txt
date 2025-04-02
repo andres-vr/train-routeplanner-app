@@ -1066,3 +1066,4 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-androi
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-android\android\jni_remap.arm64-v8a.o
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-android\android\assets\Microsoft.Data.Sqlite.dll
