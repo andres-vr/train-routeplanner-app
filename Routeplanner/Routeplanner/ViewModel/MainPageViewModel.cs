@@ -10,9 +10,9 @@ namespace Routeplanner.ViewModel
     public partial class MainPageViewModel : ObservableObject
     {
         private readonly ITripService _tripService;
-        private readonly SqliteDatabaseService _databaseService; 
+        private readonly SqliteDatabaseService _databaseService;
 
-        private List<string> _locationCache = new() { };
+        private List<string> _stationCache = new();
 
         [ObservableProperty]
         private string _startPoint;
@@ -57,6 +57,14 @@ namespace Routeplanner.ViewModel
             _MaxDate = DateTime.Today.AddYears(1);
             SelectedDate = DateTime.Today;
             SelectedTime = DateTime.Now.TimeOfDay;
+
+            Task.Run(CacheStationsAsync);
+        }
+
+        private async Task CacheStationsAsync()
+        {
+            var stations = await _databaseService.GetAllStataions(); 
+            _stationCache = stations.Select(s => s.name).ToList();
         }
 
         // Handlers for text changes
@@ -111,25 +119,18 @@ namespace Routeplanner.ViewModel
             }
         }
 
-        // Database query
-        private async Task<List<Station>> GetSuggestionsFromDatabase(string query)
-        {
-            await Task.Delay(10);
-
-            var stations = await _databaseService.SearchStationsAsync(query);
-            return stations;
-        }
-
         private async void UpdateSuggestions(string query, bool isStartPoint)
         {
-            // Get results and update the appropriate collection
-            var results = await GetSuggestionsFromDatabase(query);
-
+            // use station cache to update suggestions
+            var results = _stationCache
+               .Where(s => s.StartsWith(query, StringComparison.OrdinalIgnoreCase)) // Faster lookup
+               .Take(10) // Limit the number of suggestions
+               .ToList();
             if (isStartPoint)
             {
                 StartPointSuggestions.Clear();
                 foreach (var item in results)
-                    StartPointSuggestions.Add(item.name);
+                    StartPointSuggestions.Add(item);
 
                 // toon suggesties als er resultaten zijn en de query niet leeg is
                 IsStartPointSuggestionsVisible = results.Any() && !string.IsNullOrEmpty(query);
@@ -138,7 +139,7 @@ namespace Routeplanner.ViewModel
             {
                 DestinationSuggestions.Clear();
                 foreach (var item in results)
-                    DestinationSuggestions.Add(item.name);
+                    DestinationSuggestions.Add(item);
 
                 // toon suggesties als er resultaten zijn en de query niet leeg is
                 IsDestinationSuggestionsVisible = results.Any() && !string.IsNullOrEmpty(query);

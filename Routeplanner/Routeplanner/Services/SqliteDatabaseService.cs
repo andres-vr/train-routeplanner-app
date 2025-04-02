@@ -12,6 +12,12 @@ namespace Routeplanner.Services
 
         }
 
+        public async Task<List<Station>> GetAllStataions() 
+        {
+            await Init();
+            return await Database.Table<Station>()
+                         .ToListAsync();
+        }
         public async Task<List<Station>> SearchStationsAsync(string query)
         {
             await Init();
