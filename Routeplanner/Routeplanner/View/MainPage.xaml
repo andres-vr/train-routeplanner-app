@@ -33,8 +33,8 @@
                        Padding="10"
                        BackgroundColor="LightGray">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding SelectStartPointCommand}"
-                                              CommandParameter="{Binding}" />
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=SelectStartPointCommand}"
+                                              CommandParameter="{Binding .}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </DataTemplate>
@@ -62,8 +62,8 @@
                        Padding="10"
                        BackgroundColor="LightGray">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding SelectDestinationCommand}"
-                                              CommandParameter="{Binding}" />
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=SelectDestinationCommand}"
+                                              CommandParameter="{Binding .}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </DataTemplate>
