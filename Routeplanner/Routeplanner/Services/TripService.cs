@@ -16,9 +16,9 @@ namespace Routeplanner.Services
             _apiCallService = apiCallService;
         }
 
-        public async Task<string> FetchTripsAsync(string fromStation, string toStation, DateTime selectedDate, TimeSpan selectedTime/*, string selectedType*/)
+        public async Task<string> FetchTripsAsync(APIParameters parameters)
         {
-            return await _apiCallService.GetTripsAsync(fromStation, toStation, selectedDate, selectedTime/*, selectedType*/);
+            return await _apiCallService.GetTripsAsync(parameters);
         }
 
         public Task<List<Trip>> GetTrips()

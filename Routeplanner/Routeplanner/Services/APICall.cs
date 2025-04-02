@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Platform;
+using Routeplanner.Model;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -19,21 +20,21 @@ namespace Routeplanner.Services
             _client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "68ba61bbc3914b5cadb8a0484598d313");
         }
 
-        public async Task<string> GetTripsAsync(string fromStation, string toStation, DateTime selectedDate, TimeSpan selectedTime/*, string selectedType*/)
+        public async Task<string> GetTripsAsync(APIParameters parameters)
         {
             var baseUrl = "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips";
             try
             {
                 // Combine them into a single DateTime
-                DateTime combinedDateTime = selectedDate.Date.Add(selectedTime);
+                DateTime combinedDateTime = parameters.selectedDate.Date.Add(parameters.selectedTime);
 
                 // Format according to RFC 3339
                 string formattedDateTime = combinedDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffzzz");
 
                 var queryParams = new Dictionary<string, string>
             {
-                { "fromStation", fromStation },
-                { "toStation", toStation },
+                { "fromStation", parameters.fromStation },
+                { "toStation", parameters.toStation },
                 { "originWalk", "false" },
                 { "originBike", "false" },
                 { "originCar", "false" },

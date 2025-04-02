@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Routeplanner.Model;
 using Routeplanner.Services;
 using System.Linq.Expressions;
 
@@ -49,7 +50,7 @@ namespace Routeplanner.ViewModel
                     _MaxDate = DateTime.Today.AddYears(1);
                     _SelectedDate = DateTime.Today;
                     _SelectedTime = DateTime.Now.TimeOfDay;
-                }
+            }
 
             [RelayCommand]
             public void Completed()
@@ -60,6 +61,15 @@ namespace Routeplanner.ViewModel
             [RelayCommand]
             public async void Search()
             {
+                APIParameters parameters = new APIParameters
+                {
+                    fromStation = StartPoint,
+                    toStation = Destination,
+                    selectedDate = SelectedDate,
+                    selectedTime = SelectedTime,
+                    //selectedType = SelectedType
+                };
+
                 Console.WriteLine("Seach pressed");
                 if (string.IsNullOrWhiteSpace(StartPoint) || string.IsNullOrWhiteSpace(Destination))
                 {
@@ -68,7 +78,7 @@ namespace Routeplanner.ViewModel
                 }
                 try
                 {
-                    string response = await _tripService.FetchTripsAsync(StartPoint, Destination, SelectedDate, SelectedTime/*, SelectedType*/);
+                    string response = await _tripService.FetchTripsAsync(parameters);
                     Console.WriteLine("API Response:");
                     Console.WriteLine(response);
                 }

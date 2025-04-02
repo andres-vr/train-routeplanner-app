@@ -6,6 +6,6 @@ namespace Routeplanner.Services
     {
         Task<List<Trip>> GetTrips();
 
-        Task<string> FetchTripsAsync(string fromStation, string toStation, DateTime selectedDate, TimeSpan selectedTime/*, string selectedType*/);
+        Task<string> FetchTripsAsync(APIParameters parameters);
     }
 }
