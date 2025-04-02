@@ -63,7 +63,7 @@ namespace Routeplanner.ViewModel
 
         private async Task CacheStationsAsync()
         {
-            var stations = await _databaseService.GetAllStataions(); 
+            var stations = await _databaseService.GetAllStations(); 
             _stationCache = stations.Select(s => s.name).ToList();
         }
 
@@ -102,10 +102,14 @@ namespace Routeplanner.ViewModel
 
             try
             {
+                Console.WriteLine("hoi");
+                string startCode = await _databaseService.NameToCode(StartPoint);
+                string destinationCode = await _databaseService.NameToCode(Destination);
+                Console.WriteLine(startCode, destinationCode);
                 var parameters = new APIParameters
                 {
-                    fromStation = StartPoint,
-                    toStation = Destination,
+                    fromStation = startCode,
+                    toStation = destinationCode,
                     selectedDate = SelectedDate,
                     selectedTime = SelectedTime
                 };

@@ -12,7 +12,7 @@ namespace Routeplanner.Services
 
         }
 
-        public async Task<List<Station>> GetAllStataions() 
+        public async Task<List<Station>> GetAllStations() 
         {
             await Init();
             return await Database.Table<Station>()
@@ -26,13 +26,13 @@ namespace Routeplanner.Services
                          .ToListAsync();
         }
 
-        public async Task<string> CodeToStationName(string code)
+        public async Task<string> NameToCode(string name)
         {
             await Init();
             var station = await Database.Table<Station>()
-                               .Where(s => s.code == code)
+                               .Where(s => s.name == name)
                                .FirstOrDefaultAsync();
-            return station?.name;
+            return station?.code;
         }
 
         async Task Init()
