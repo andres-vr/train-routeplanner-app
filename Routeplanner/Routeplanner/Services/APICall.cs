@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Maui.Platform;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -21,10 +22,15 @@ namespace Routeplanner.Services
         public async Task<string> GetTripsAsync(string fromStation, string toStation, DateTime selectedDate, TimeSpan selectedTime/*, string selectedType*/)
         {
             var baseUrl = "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips";
+            try
+            {
+                // Combine them into a single DateTime
+                DateTime combinedDateTime = selectedDate.Date.Add(selectedTime);
 
-            string formattedDateTime = $"{selectedDate:yyyy-MM-dd}T{selectedTime:hh\\:mm}";
+                // Format according to RFC 3339
+                string formattedDateTime = combinedDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffzzz");
 
-            var queryParams = new Dictionary<string, string>
+                var queryParams = new Dictionary<string, string>
             {
                 { "fromStation", fromStation },
                 { "toStation", toStation },
@@ -48,21 +54,28 @@ namespace Routeplanner.Services
                 { "travelRequestType", "DEFAULT" }
             };
 
-            var queryString = HttpUtility.ParseQueryString(string.Empty);
-            foreach (var param in queryParams)
-            {
-                queryString[param.Key] = param.Value;
-            }
+                var queryString = HttpUtility.ParseQueryString(string.Empty);
+                foreach (var param in queryParams)
+                {
+                    queryString[param.Key] = param.Value;
+                }
 
-            var uri = $"{baseUrl}?{queryString}";
+                var uri = $"{baseUrl}?{queryString}";
 
-            Console.WriteLine($"Requesting: {uri}");
+                Console.WriteLine($"Requesting: {uri}");
 
-            try
-            {
+
+
+
+
+
+
+
+
                 var response = await _client.GetAsync(uri);
                 return await response.Content.ReadAsStringAsync();
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");

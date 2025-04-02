@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Services;
+using System.Linq.Expressions;
 
 namespace Routeplanner.ViewModel
 {
@@ -65,10 +66,15 @@ namespace Routeplanner.ViewModel
                     Console.WriteLine("Please enter valid station names.");
                     return;
                 }
-
-                string response = await _tripService.FetchTripsAsync(StartPoint, Destination, SelectedDate, SelectedTime/*, SelectedType*/);
-                Console.WriteLine("API Response:");
-                Console.WriteLine(response);
+                try
+                {
+                    string response = await _tripService.FetchTripsAsync(StartPoint, Destination, SelectedDate, SelectedTime/*, SelectedType*/);
+                    Console.WriteLine("API Response:");
+                    Console.WriteLine(response);
+                }
+                catch (Exception ex) { 
+            
+                }
         }
     }
 }
