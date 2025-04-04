@@ -1,10 +1,5 @@
-﻿using Microsoft.Maui.Platform;
-using Routeplanner.Model;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
+﻿using Routeplanner.Model;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Web;
 
 namespace Routeplanner.Services
@@ -48,7 +43,7 @@ namespace Routeplanner.Services
                 { "localTrainsOnly", "false" },
                 { "excludeHighSpeedTrains", "false" },
                 { "excludeTrainsWithReservationRequired", "false" },
-                { "product", "OVCHIPKAART_ENKELE_REIS"/*selectedType*/ },
+                { "product", "OVCHIPKAART_ENKELE_REIS" },
                 { "discount", "NO_DISCOUNT" },
                 { "travelClass", "2" },
                 { "passing", "false" },
@@ -64,14 +59,6 @@ namespace Routeplanner.Services
                 var uri = $"{baseUrl}?{queryString}";
 
                 Console.WriteLine($"Requesting: {uri}");
-
-
-
-
-
-
-
-
 
                 var response = await _client.GetAsync(uri);
                 return await response.Content.ReadAsStringAsync();

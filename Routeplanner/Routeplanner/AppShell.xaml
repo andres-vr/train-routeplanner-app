@@ -9,7 +9,17 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:PlanPage}"
         Route="MainPage" />
 
+    <TabBar>
+        <Tab Title="Plan">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:PlanPage}"/>
+        </Tab>
+        <!--<Tab Title="Departures">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:DeparturePage}"/>
+        </Tab>-->
+    </TabBar>
 </Shell>

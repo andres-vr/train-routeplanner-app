@@ -12,6 +12,8 @@ namespace Routeplanner.Model
         public string endStation { get; set; }
         public string startTime { get; set; }
         public string endTime { get; set; }
+        public string duration { get; set; }
+        public int connections { get; set; }
         public Dictionary<string, DateTime> stopList { get; set; }
     }
 }
