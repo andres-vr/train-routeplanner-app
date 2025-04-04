@@ -4,6 +4,7 @@ using Routeplanner.Model;
 using Routeplanner.Services;
 using System.Collections.ObjectModel;
 using System.Text.Json;
+
 namespace Routeplanner.ViewModel
 {
     public partial class PlanViewModel : ObservableObject
@@ -121,12 +122,10 @@ namespace Routeplanner.ViewModel
                 JsonDocument apiResponse = JsonDocument.Parse(response);
 
                 List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
-
                 if (_Trips.Count != 0)
                     _Trips.Clear();
-
-                foreach (var trip in trips) 
-                { 
+                foreach (var trip in trips)
+                {
                     _Trips.Add(trip);
                 }
             }
@@ -135,87 +134,116 @@ namespace Routeplanner.ViewModel
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-
         public static List<Trip> ExtractTripsFromApiResponse(JsonDocument responseData)
         {
             List<Trip> tripsList = new List<Trip>();
 
-            // Get the trips array
-            JsonElement tripsArray = responseData.RootElement.GetProperty("trips");
-
-            // Iterate through all trips in the response
-            for (int i = 0; i < tripsArray.GetArrayLength(); i++)
+            try
             {
-                var tripData = tripsArray[i];
+                // Add logging to track method calls
+                Console.WriteLine("Starting ExtractTripsFromApiResponse");
 
-                // Create a new Trip object for each trip in the API response
-                Trip trip = new Trip
+                // Get the trips array
+                JsonElement tripsArray = responseData.RootElement.GetProperty("trips");
+
+                // Track for debugging
+                Console.WriteLine($"Processing {tripsArray.GetArrayLength()} trips");
+
+                // Iterate through all trips in the response
+                for (int i = 0; i < tripsArray.GetArrayLength(); i++)
                 {
-                    // Full trip origin
-                    startStation = tripData.GetProperty("legs")[0].GetProperty("origin").GetProperty("name").GetString(),
+                    Console.WriteLine($"Processing trip {i + 1}");
+                    var tripData = tripsArray[i];
 
-                    // Full trip destination
-                    endStation = tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
-                                       .GetProperty("destination").GetProperty("name").GetString(),
-
-                    // Start and end time
-                    startTime = DateTime.Parse(tripData.GetProperty("legs")[0]
-                                       .GetProperty("origin").GetProperty("actualDateTime").GetString())
-                                       .ToString("yyyy-MM-dd HH:mm:ss"),
-
-                    endTime = DateTime.Parse(tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
-                                       .GetProperty("destination").GetProperty("actualDateTime").GetString())
-                                       .ToString("yyyy-MM-dd HH:mm:ss"),
-
-                    duration = $"{tripData.GetProperty("actualDurationInMinutes").GetInt32()} minutes",
-                    connections = tripData.GetProperty("transfers").GetInt32(),
-                };
-
-                // Collect all stops from all legs
-                trip.stopList = new Dictionary<string, DateTime>();
-                for (int j = 0; j < tripData.GetProperty("legs").GetArrayLength(); j++)
-                {
-                    var leg = tripData.GetProperty("legs")[j];
-                    var stops = leg.GetProperty("stops");
-
-                    // Add each stop to the stopList
-                    for (int k = 0; k < stops.GetArrayLength(); k++)
+                    // Create a new Trip object for each trip in the API response
+                    Trip trip = new Trip
                     {
-                        var stop = stops[k];
-                        string stationName = stop.GetProperty("name").GetString();
+                        // Basic properties as before
+                        startStation = tripData.GetProperty("legs")[0].GetProperty("origin").GetProperty("name").GetString(),
+                        endStation = tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
+                                           .GetProperty("destination").GetProperty("name").GetString(),
+                        startTime = DateTime.Parse(tripData.GetProperty("legs")[0]
+                                           .GetProperty("origin").GetProperty("actualDateTime").GetString())
+                                           .ToString("yyyy-MM-dd HH:mm:ss"),
+                        endTime = DateTime.Parse(tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
+                                           .GetProperty("destination").GetProperty("actualDateTime").GetString())
+                                           .ToString("yyyy-MM-dd HH:mm:ss"),
+                        duration = $"{tripData.GetProperty("actualDurationInMinutes").GetInt32()} minutes",
+                        connections = tripData.GetProperty("transfers").GetInt32(),
+                        // Initialize stopList here
+                        stopList = new Dictionary<string, DateTime>()
+                    };
 
-                        // Use arrival time where available (for all but the first stop)
-                        DateTime stopTime;
-                        if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
-                        {
-                            stopTime = DateTime.Parse(arrivalTimeElement.GetString());
-                        }
-                        else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
-                        {
-                            // Fall back to departure time if arrival time isn't available
-                            stopTime = DateTime.Parse(departureTimeElement.GetString());
-                        }
-                        else
-                        {
-                            // Skip stops with no timing information
-                            continue;
-                        }
-                        if (!trip.stopList.ContainsKey(stationName))
-                        {
-                            trip.stopList[stationName] = stopTime;
-                        }
+                    // Process all stops for this trip at once
+                    ProcessAllStopsForTrip(tripData, trip);
+
+                    // Add the complete trip to our list
+                    tripsList.Add(trip);
+                    Console.WriteLine($"Trip {i + 1} processed with {trip.stopList.Count} stops");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in ExtractTripsFromApiResponse: {ex.Message}");
+            }
+
+            return tripsList;
+        }
+
+        private static void ProcessAllStopsForTrip(JsonElement tripData, Trip trip)
+        {
+            // Create the HashSet for this specific trip
+            HashSet<string> processedStops = new HashSet<string>();
+
+            int legCount = tripData.GetProperty("legs").GetArrayLength();
+            Console.WriteLine($"Processing {legCount} legs for trip");
+
+            // Process all legs
+            for (int j = 0; j < legCount; j++)
+            {
+                var leg = tripData.GetProperty("legs")[j];
+                var stops = leg.GetProperty("stops");
+
+                // Process stops for this leg
+                for (int k = 0; k < stops.GetArrayLength(); k++)
+                {
+                    var stop = stops[k];
+                    string stationName = stop.GetProperty("name").GetString();
+
+                    // Get time logic
+                    DateTime stopTime;
+                    if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
+                    {
+                        stopTime = DateTime.Parse(arrivalTimeElement.GetString());
+                    }
+                    else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
+                    {
+                        stopTime = DateTime.Parse(departureTimeElement.GetString());
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    // Check if we've already processed this station
+                    if (!processedStops.Contains(stationName))
+                    {
+                        trip.stopList[stationName] = stopTime;
+                        processedStops.Add(stationName);
+                        Console.WriteLine($"Added stop: {stationName}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Skipped duplicate stop: {stationName}");
                     }
                 }
-
-                // Add completed trip to the list
-                tripsList.Add(trip);
             }
-            return tripsList;
         }
 
         private async void UpdateSuggestions(string query, bool isStartPoint)
         {
             // use station cache to update suggestions
+
             var results = _stationCache
                .Where(s => s.StartsWith(query, StringComparison.OrdinalIgnoreCase)) 
                .Take(10) // limit the number of suggestions
