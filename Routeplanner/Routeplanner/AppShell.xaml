@@ -7,19 +7,14 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Routeplanner">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:PlanPage}"
-        Route="MainPage" />
-
     <TabBar>
-        <Tab Title="Plan">
+        <Tab Title="Plan" Route="plan">
             <ShellContent
-                ContentTemplate="{DataTemplate local:PlanPage}"/>
+                ContentTemplate="{DataTemplate local:PlannerPage}"/>
         </Tab>
-        <!--<Tab Title="Departures">
+        <Tab Title="Departures" Route="departures">
             <ShellContent
-                ContentTemplate="{DataTemplate local:DeparturePage}"/>
-        </Tab>-->
+                ContentTemplate="{DataTemplate local:DeparturesPage}"/>
+        </Tab>
     </TabBar>
 </Shell>

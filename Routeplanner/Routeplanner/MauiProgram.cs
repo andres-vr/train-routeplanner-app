@@ -18,8 +18,10 @@ namespace Routeplanner
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
             builder.UseMauiCommunityToolkit();
-            builder.Services.AddSingleton<PlanViewModel>();
-            builder.Services.AddSingleton<PlanPage>();
+            builder.Services.AddSingleton<PlannerViewModel>();
+            builder.Services.AddSingleton<PlannerPage>();
+            builder.Services.AddSingleton<DeparturesViewModel>();
+            builder.Services.AddSingleton<DeparturesPage>();
             builder.Services.AddSingleton<ITripService, TripService>();
             builder.Services.AddSingleton<APICallService>();
             builder.Services.AddSingleton<SqliteDatabaseService>();

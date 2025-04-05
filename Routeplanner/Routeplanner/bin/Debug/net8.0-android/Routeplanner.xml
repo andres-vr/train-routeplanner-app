@@ -4,79 +4,153 @@
         <name>Routeplanner</name>
     </assembly>
     <members>
-        <member name="T:Routeplanner.ViewModel.PlanViewModel">
+        <member name="T:Routeplanner.ViewModel.DeparturesViewModel">
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.StartPoint">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._startPoint"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._startPoint"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.Destination">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._destination"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Destination">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._destination"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SelectedTime">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._selectedTime"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedTime">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedTime"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SelectedDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._selectedDate"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedDate"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.MinDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._MinDate"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.MinDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._MinDate"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.MaxDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._MaxDate"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.MaxDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._MaxDate"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SelectedType">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._selectedType"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedType">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedType"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.StartPointSuggestions">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._startPointSuggestions"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.StartPointSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._startPointSuggestions"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.DestinationSuggestions">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._destinationSuggestions"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.DestinationSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._destinationSuggestions"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.IsStartPointSuggestionsVisible">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._isStartPointSuggestionsVisible"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsStartPointSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isStartPointSuggestionsVisible"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.IsDestinationSuggestionsVisible">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlanViewModel._isDestinationSuggestionsVisible"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsDestinationSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isDestinationSuggestionsVisible"/>
         </member>
-        <member name="M:Routeplanner.ViewModel.PlanViewModel.OnStartPointChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlanViewModel.StartPoint"/> just changed.</summary>
+        <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnStartPointChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlanViewModel.StartPoint"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint"/> is changed.</remarks>
         </member>
-        <member name="M:Routeplanner.ViewModel.PlanViewModel.OnDestinationChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlanViewModel.Destination"/> just changed.</summary>
+        <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnDestinationChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Destination"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlanViewModel.Destination"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Destination"/> is changed.</remarks>
         </member>
-        <member name="F:Routeplanner.ViewModel.PlanViewModel.completedCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlanViewModel.CompletedCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.completedCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.CompletedCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.CompletedCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlanViewModel.Completed"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.CompletedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.Completed"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.PlanViewModel.selectStartPointCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlanViewModel.SelectStartPointCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.selectStartPointCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPointCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SelectStartPointCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlanViewModel.SelectStartPoint(System.String)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPointCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPoint(System.String)"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.PlanViewModel.selectDestinationCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlanViewModel.SelectDestinationCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.selectDestinationCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SelectDestinationCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SelectDestinationCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlanViewModel.SelectDestination(System.String)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectDestinationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectDestination(System.String)"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.PlanViewModel.searchCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlanViewModel.SearchCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.searchCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SearchCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlanViewModel.SearchCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlanViewModel.Search"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.Search"/>.</summary>
+        </member>
+        <member name="T:Routeplanner.ViewModel.PlannerViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._startPoint"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.Destination">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._destination"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectedTime">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._selectedTime"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectedDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._selectedDate"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.MinDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._MinDate"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.MaxDate">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._MaxDate"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectedType">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._selectedType"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.StartPointSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._startPointSuggestions"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.DestinationSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._destinationSuggestions"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsStartPointSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isStartPointSuggestionsVisible"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsDestinationSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isDestinationSuggestionsVisible"/>
+        </member>
+        <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnStartPointChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint"/> is changed.</remarks>
+        </member>
+        <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnDestinationChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.Destination"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlannerViewModel.Destination"/> is changed.</remarks>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.completedCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.CompletedCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.CompletedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Completed"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectStartPointCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectStartPointCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectStartPointCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectStartPoint(System.String)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectDestinationCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectDestinationCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectDestinationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectDestination(System.String)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.searchCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Search"/>.</summary>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
             <summary>

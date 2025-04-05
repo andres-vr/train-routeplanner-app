@@ -76,8 +76,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="View\PlanPage.xaml.cs">
-	    <DependentUpon>PlanPage.xaml</DependentUpon>
+	  <Compile Update="View\PlannerPage.xaml.cs">
+	    <DependentUpon>PlannerPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="View\DeparturesPage.xaml.cs">
+	    <DependentUpon>DeparturesPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
