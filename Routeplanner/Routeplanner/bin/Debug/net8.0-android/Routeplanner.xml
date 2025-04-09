@@ -9,50 +9,20 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
-            <inheritdoc/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._startPoint"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Station">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._station"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Destination">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._destination"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.StationSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._stationSuggestions"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedTime">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedTime"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsStationSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isStationSuggestionsVisible"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedDate"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.MinDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._MinDate"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.MaxDate">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._MaxDate"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectedType">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._selectedType"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.StartPointSuggestions">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._startPointSuggestions"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.DestinationSuggestions">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._destinationSuggestions"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsStartPointSuggestionsVisible">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isStartPointSuggestionsVisible"/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsDestinationSuggestionsVisible">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isDestinationSuggestionsVisible"/>
-        </member>
-        <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnStartPointChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint"/> just changed.</summary>
+        <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnStationChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Station"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.StartPoint"/> is changed.</remarks>
-        </member>
-        <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnDestinationChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Destination"/> just changed.</summary>
-            <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Destination"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Station"/> is changed.</remarks>
         </member>
         <member name="F:Routeplanner.ViewModel.DeparturesViewModel.completedCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.CompletedCommand"/>.</summary>
@@ -60,17 +30,11 @@
         <member name="P:Routeplanner.ViewModel.DeparturesViewModel.CompletedCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.Completed"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.selectStartPointCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPointCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.selectStationCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStationCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPointCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectStartPoint(System.String)"/>.</summary>
-        </member>
-        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.selectDestinationCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SelectDestinationCommand"/>.</summary>
-        </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectDestinationCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectDestination(System.String)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectStation(System.String)"/>.</summary>
         </member>
         <member name="F:Routeplanner.ViewModel.DeparturesViewModel.searchCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SearchCommand"/>.</summary>
@@ -278,6 +242,15 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Station">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Station" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StationSuggestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StationSuggestions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStationSuggestionsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStationSuggestionsVisible" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartPoint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartPoint" generated properties.</summary>
         </member>
@@ -316,6 +289,15 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Station">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Station" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StationSuggestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StationSuggestions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStationSuggestionsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStationSuggestionsVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartPoint">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartPoint" generated properties.</summary>

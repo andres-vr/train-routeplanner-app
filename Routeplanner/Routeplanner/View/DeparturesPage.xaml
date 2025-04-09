@@ -5,30 +5,85 @@
              xmlns:model="clr-namespace:Routeplanner.Model"
              xmlns:viewmodel="clr-namespace:Routeplanner.ViewModel"
              x:Class="Routeplanner.DeparturesPage"
-             x:DataType="viewmodel:DeparturesViewModel"
-             Title="DeparturesPage">
+             x:DataType="viewmodel:DeparturesViewModel">
     <ScrollView>
         <VerticalStackLayout
         Padding="30,0"
         Spacing="25">
 
-            <TimePicker x:Name="TimePicker"
-                    Time="{Binding SelectedTime}"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-            <DatePicker MinimumDate="{Binding MinDate}"
-        MaximumDate="{Binding MaxDate}"
-        Date="{Binding SelectedDate}" />
-            <Picker x:Name="picker"
-            Title="Selecteer een tijdstype"
-            SelectedItem="{Binding SelectedType}">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Vetrek</x:String>
-                        <x:String>Aankomst</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+            <Entry 
+            Placeholder="Geef een station in"
+            Text="{Binding Station, Mode=TwoWay}"
+            ClearButtonVisibility="WhileEditing">
+                <Entry.Behaviors>
+                    <toolkit:EventToCommandBehavior 
+                    EventName="Completed" 
+                    Command="{Binding CompletedCommand}"/>
+                </Entry.Behaviors>
+            </Entry>
+            <VerticalStackLayout IsVisible="{Binding IsStationSuggestionsVisible}"
+             BackgroundColor="White"
+             Padding="5"
+             Spacing="2"
+             BindableLayout.ItemsSource="{Binding StationSuggestions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding}"
+           Padding="10"
+           BackgroundColor="LightGray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SelectStationCommand}"
+                                  CommandParameter="{Binding .}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <CollectionView ItemsSource="{Binding _Departures}"
+      SelectionMode="None"
+      Grid.ColumnSpan="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Departure">
+                        <Grid Padding="10">
+                            <Border Style="{StaticResource CardView}" Padding="10">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer 
+             Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=GoToDeparture}"
+             CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+
+                                <!-- One-row horizontal layout -->
+                                <VerticalStackLayout Spacing="5">
+                                    <HorizontalStackLayout Spacing="25">
+                                        <HorizontalStackLayout>
+                                            <Label Text="{Binding Time}" FontAttributes="Bold" />
+                                        </HorizontalStackLayout>
+
+                                        <HorizontalStackLayout>
+                                            <Label Text="⏱" />
+                                            <Label Text="{Binding Destination}" />
+                                            <Label Text="{Binding TrainType}" />
+                                            <Label Text="{Binding Stops}" />
+                                        </HorizontalStackLayout>
+
+                                        <HorizontalStackLayout>
+                                            <Label Text="🔗" />
+                                            <Label Text="{Binding Track}" />
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button
+            x:Name="searchBtn"
+            Text="Opties tonen" 
+            Command="{Binding SearchCommand}"
+            HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

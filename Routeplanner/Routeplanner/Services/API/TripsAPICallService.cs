@@ -1,21 +1,22 @@
 ﻿using Routeplanner.Model;
+using Routeplanner.Services.API;
 using System.Net.Http.Headers;
 using System.Web;
 
 namespace Routeplanner.Services
 {
-    public class APICallService
+    public class TripsAPICallService : IAPICallService
     {
         private readonly HttpClient _client;
 
-        public APICallService()
+        public TripsAPICallService()
         {
             _client = new HttpClient();
             _client.DefaultRequestHeaders.CacheControl = CacheControlHeaderValue.Parse("no-cache");
             _client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "68ba61bbc3914b5cadb8a0484598d313");
         }
 
-        public async Task<string> GetTripsAsync(APIParameters parameters)
+        public async Task<string> MakeCallAsync(APIParameters parameters)
         {
             var baseUrl = "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips";
             try

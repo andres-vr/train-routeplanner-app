@@ -1,7 +1,8 @@
 ﻿using Routeplanner.Model;
+
 using System.Text.Json;
 
-namespace Routeplanner.Services
+namespace Routeplanner.Services.Planner
 {
     public interface ITripService
     {

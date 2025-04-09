@@ -1,7 +1,7 @@
 ﻿using Routeplanner.Model;
 using SQLite;
 
-namespace Routeplanner.Services
+namespace Routeplanner.Services.Database
 {
     public class SqliteDatabaseService
     {
@@ -12,7 +12,7 @@ namespace Routeplanner.Services
 
         }
 
-        public async Task<List<Station>> GetAllStations() 
+        public async Task<List<Station>> GetAllStations()
         {
             await Init();
             return await Database.Table<Station>()
@@ -68,7 +68,6 @@ namespace Routeplanner.Services
             new Station { name = "Amersfoort Schothorst", code = "Amfs" },
             new Station { name = "Amersfoort Vathorst", code = "Avat" },
             new Station { name = "Amsterdam Amstel", code = "Asa" },
-            new Station { name = "Amsterdam Arena", code = "Asdar" },
             new Station { name = "Amsterdam Bijlmer ArenA", code = "Asb" },
             new Station { name = "Amsterdam Centraal", code = "Asd" },
             new Station { name = "Amsterdam Holendrecht", code = "Ashd" },

@@ -1,4 +1,5 @@
 ﻿using Routeplanner.Model;
+using Routeplanner.Services.API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,20 +7,20 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Routeplanner.Services
+namespace Routeplanner.Services.Planner
 {
     public class TripService : ITripService
     {
-        private readonly APICallService _apiCallService;
+        private readonly TripsAPICallService _apiCallService;
 
-        public TripService(APICallService apiCallService)
+        public TripService(TripsAPICallService apiCallService)
         {
             _apiCallService = apiCallService;
         }
 
         public async Task<string> FetchTripsAsync(APIParameters parameters)
         {
-            return await _apiCallService.GetTripsAsync(parameters);
+            return await _apiCallService.MakeCallAsync(parameters);
         }
 
         public Task<List<Trip>> GetTrips()
