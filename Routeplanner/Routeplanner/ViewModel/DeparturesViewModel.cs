@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Model;
 using Routeplanner.Services.Database;
 using Routeplanner.Services.Departures;
+using Routeplanner.Services.Repositories;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 
@@ -12,7 +13,7 @@ namespace Routeplanner.ViewModel
     {
         private readonly IDepartureService _departureService;
 
-        private readonly SqliteDatabaseService _databaseService;
+        private readonly StationTable _stationTable;
 
         public ObservableCollection<Departure> _Departures { get; } = new();
 
@@ -27,17 +28,17 @@ namespace Routeplanner.ViewModel
         [ObservableProperty]
         private bool _isStationSuggestionsVisible;
 
-        public DeparturesViewModel(IDepartureService departureService, SqliteDatabaseService databaseService)
+        public DeparturesViewModel(IDepartureService departureService, StationTable stationTable)
         {
             _departureService = departureService;
-            _databaseService = databaseService;
+            _stationTable = stationTable;
 
             Task.Run(CacheStationsAsync);
         }
 
         private async Task CacheStationsAsync()
         {
-            var stations = await _databaseService.GetAllStations();
+            var stations = await _stationTable.GetAllStations();
             _stationCache = stations.Select(s => s.name).ToList();
         }
 
@@ -67,7 +68,7 @@ namespace Routeplanner.ViewModel
 
             try
             {
-                string station = await _databaseService.NameToCode(_station);
+                string station = await _stationTable.NameToCode(_station);
 
                 APIParameters parameters = new APIParameters
                 {
@@ -151,12 +152,8 @@ namespace Routeplanner.ViewModel
 
         private static void ProcessRouteStationsForDeparture(JsonElement departureData, Departure departure, string currentStation)
         {
-            // Create a HashSet to track processed stops and avoid duplicates
-            HashSet<string> processedStops = new HashSet<string>();
-
-            // First, add the origin station (current station where the API is called from)
+            // start station
             departure.Stops.Add(currentStation);
-            processedStops.Add(currentStation);
             Console.WriteLine($"Added origin stop: {currentStation}");
 
             // Check if route stations are available
@@ -171,17 +168,9 @@ namespace Routeplanner.ViewModel
                     var station = routeStations[k];
                     string stationName = station.GetProperty("mediumName").GetString();
 
-                    // Check if we've already processed this station
-                    if (!processedStops.Contains(stationName))
-                    {
-                        departure.Stops.Add(stationName);
-                        processedStops.Add(stationName);
-                        Console.WriteLine($"Added intermediate stop: {stationName}");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Skipped duplicate stop: {stationName}");
-                    }
+                    departure.Stops.Add(stationName);
+                    Console.WriteLine($"Added intermediate stop: {stationName}");
+
                 }
             }
             else
@@ -189,14 +178,10 @@ namespace Routeplanner.ViewModel
                 Console.WriteLine("No route stations found for this departure");
             }
 
-            // Add destination as the final stop if not already in the list
+            // Add destination 
             string destinationName = departureData.GetProperty("direction").GetString();
-            if (!processedStops.Contains(destinationName))
-            {
-                departure.Stops.Add(destinationName);
-                processedStops.Add(destinationName);
-                Console.WriteLine($"Added destination stop: {destinationName}");
-            }
+            departure.Stops.Add(destinationName);
+            Console.WriteLine($"Added destination stop: {destinationName}");
         }
 
         private async void UpdateSuggestions(string query, bool isStation)

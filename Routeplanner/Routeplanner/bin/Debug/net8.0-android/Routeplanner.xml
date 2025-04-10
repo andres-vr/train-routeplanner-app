@@ -48,6 +48,8 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._startPoint"/>
@@ -109,6 +111,18 @@
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectDestinationCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectDestination(System.String)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectRouteCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectRouteCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectRouteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectRoute(Routeplanner.Model.Route)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.goToTripCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.GoToTripCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.GoToTripCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.GoToTrip(Routeplanner.Model.Trip)"/>.</summary>
         </member>
         <member name="F:Routeplanner.ViewModel.PlannerViewModel.searchCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand"/>.</summary>

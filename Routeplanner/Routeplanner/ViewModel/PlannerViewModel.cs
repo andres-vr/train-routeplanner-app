@@ -3,7 +3,8 @@
     using Routeplanner.Model;
     using Routeplanner.Services.Database;
     using Routeplanner.Services.Planner;
-    using System.Collections.ObjectModel;
+using Routeplanner.Services.Repositories;
+using System.Collections.ObjectModel;
     using System.Text.Json;
 
     namespace Routeplanner.ViewModel
@@ -12,9 +13,13 @@
         {
             private readonly ITripService _tripService;
 
-            private readonly SqliteDatabaseService _databaseService;
+            private readonly StationTable _stationTable;
 
-            public ObservableCollection<Trip> _Trips { get; } = new();
+            private readonly RouteCacheTable _routeCacheTable;
+
+            public List<Trip> _Trips { get; } = new();
+
+            public List<Route> _RouteCache { get; } = new();
 
             private List<string> _stationCache = new();
 
@@ -51,10 +56,11 @@
             [ObservableProperty]
             private bool _isDestinationSuggestionsVisible;
 
-            public PlannerViewModel(ITripService tripService, SqliteDatabaseService databaseService)
+            public PlannerViewModel(ITripService tripService, StationTable stationTable, RouteCacheTable routeCacheTable)
             {
                 _tripService = tripService;
-                _databaseService = databaseService;
+                _stationTable = stationTable;
+                _routeCacheTable = routeCacheTable;
 
                 // Set default date range
                 _MinDate = DateTime.Today;
@@ -63,13 +69,23 @@
                 SelectedTime = DateTime.Now.TimeOfDay;
 
                 Task.Run(CacheStationsAsync);
-            }
+                Task.Run(GetRoutesFromCacheAsync);
+        }
 
             private async Task CacheStationsAsync()
             {
-                var stations = await _databaseService.GetAllStations();
+                var stations = await _stationTable.GetAllStations();
                 _stationCache = stations.Select(s => s.name).ToList();
             }
+
+            private async Task GetRoutesFromCacheAsync()
+            {
+                var routes = await _routeCacheTable.GetAllRoutes();
+                foreach (var route in routes)
+                {
+                    _RouteCache.Add(route);
+                }
+        }
 
             // Handlers for text changes
             partial void OnStartPointChanged(string value) =>
@@ -96,6 +112,22 @@
             }
 
             [RelayCommand]
+            private void SelectRoute(Route selectedItem)
+            {
+            StartPoint = selectedItem.fromStation;
+            Destination = selectedItem.toStation;
+            Console.WriteLine(StartPoint);
+            IsStartPointSuggestionsVisible = false;
+            IsDestinationSuggestionsVisible = false;
+            }
+
+            [RelayCommand]
+            private void GoToTrip(Trip selectedItem)
+            {
+            Console.WriteLine($"Selected trip: {selectedItem.startStation} to {selectedItem.endStation}");
+            }
+
+            [RelayCommand]
             private async Task Search()
             {
                 if (string.IsNullOrWhiteSpace(StartPoint) || string.IsNullOrWhiteSpace(Destination))
@@ -106,9 +138,18 @@
 
                 try
                 {
-                    Console.WriteLine("hoi");
-                    string startCode = await _databaseService.NameToCode(StartPoint);
-                    string destinationCode = await _databaseService.NameToCode(Destination);
+                    // Save route to cache
+                    Route route = new Route
+                    {
+                        fromStation = StartPoint,
+                        toStation = Destination
+                    };
+                    await _routeCacheTable.SaveRouteToCacheAsync(route);
+                    _RouteCache.Add(route);
+
+                    // Search query
+                    string startCode = await _stationTable.NameToCode(StartPoint);
+                    string destinationCode = await _stationTable.NameToCode(Destination);
                     Console.WriteLine(startCode, destinationCode);
                     var parameters = new APIParameters
                     {
@@ -172,7 +213,7 @@
                             duration = $"{tripData.GetProperty("actualDurationInMinutes").GetInt32()} minutes",
                             connections = tripData.GetProperty("transfers").GetInt32(),
                             // Initialize stopList here
-                            stopList = new Dictionary<string, DateTime>()
+                            stopList = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase)
                         };
 
                         // Process all stops for this trip at once
@@ -193,8 +234,6 @@
 
             private static void ProcessAllStopsForTrip(JsonElement tripData, Trip trip)
             {
-                // Create the HashSet for this specific trip
-                HashSet<string> processedStops = new HashSet<string>();
 
                 int legCount = tripData.GetProperty("legs").GetArrayLength();
                 Console.WriteLine($"Processing {legCount} legs for trip");
@@ -211,31 +250,27 @@
                         var stop = stops[k];
                         string stationName = stop.GetProperty("name").GetString();
 
-                        // Get time logic
-                        DateTime stopTime;
-                        if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
-                        {
-                            stopTime = DateTime.Parse(arrivalTimeElement.GetString());
-                        }
-                        else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
-                        {
-                            stopTime = DateTime.Parse(departureTimeElement.GetString());
-                        }
-                        else
-                        {
-                            continue;
-                        }
-
-                        // Check if we've already processed this station
-                        if (!processedStops.Contains(stationName))
-                        {
-                            trip.stopList[stationName] = stopTime;
-                            processedStops.Add(stationName);
-                            Console.WriteLine($"Added stop: {stationName}");
-                        }
-                        else
+                        if (trip.stopList.ContainsKey(stationName))
                         {
                             Console.WriteLine($"Skipped duplicate stop: {stationName}");
+                        }
+                        else {
+                            DateTime stopTime;
+                            if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
+                            {
+                                stopTime = DateTime.Parse(arrivalTimeElement.GetString());
+                            }
+                            else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
+                            {
+                                stopTime = DateTime.Parse(departureTimeElement.GetString());
+                            }
+                            else
+                            {
+                                continue;
+                            }
+
+                            trip.stopList[stationName] = stopTime;
+                            Console.WriteLine($"Added stop: {stationName}");
                         }
                     }
                 }

@@ -5,6 +5,7 @@ using Routeplanner.Services.API;
 using Routeplanner.Services.Database;
 using Routeplanner.Services.Departures;
 using Routeplanner.Services.Planner;
+using Routeplanner.Services.Repositories;
 using Routeplanner.ViewModel;
 
 namespace Routeplanner
@@ -22,13 +23,27 @@ namespace Routeplanner
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
             builder.UseMauiCommunityToolkit();
-            builder.Services.AddSingleton<PlannerViewModel>();
+
+            // Pages
             builder.Services.AddSingleton<PlannerPage>();
-            builder.Services.AddSingleton<DeparturesViewModel>();
             builder.Services.AddSingleton<DeparturesPage>();
+            builder.Services.AddSingleton<SavedPage>();
+
+            // ViewModels
+            builder.Services.AddSingleton<PlannerViewModel>();
+            builder.Services.AddSingleton<DeparturesViewModel>();
+            builder.Services.AddSingleton<SavedViewModel>();
+
+            // Services
             builder.Services.AddSingleton<ITripService, TripService>();
             builder.Services.AddSingleton<IDepartureService, DepartureService>();
-            builder.Services.AddSingleton<SqliteDatabaseService>();
+
+            // Database / Tables
+            builder.Services.AddSingleton<SQLiteDatabaseService>();
+            builder.Services.AddSingleton<StationTable>();
+            builder.Services.AddSingleton<RouteCacheTable>();
+
+            // API Call Services
             builder.Services.AddTransient<TripsAPICallService>();
             builder.Services.AddTransient<DeparturesAPICallService>();
 
