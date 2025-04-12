@@ -18,6 +18,8 @@ namespace Routeplanner.Services.Database
         {
             await _database.CreateTableAsync<Station>();
             await _database.CreateTableAsync<Route>();
+            await _database.CreateTableAsync<Trip>();
+            await _database.CreateTableAsync<Departure>();
         }
     }
 }

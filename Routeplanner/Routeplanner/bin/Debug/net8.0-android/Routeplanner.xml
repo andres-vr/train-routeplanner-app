@@ -130,6 +130,22 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Search"/>.</summary>
         </member>
+        <member name="T:Routeplanner.ViewModel.SavedViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToTripCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToTripCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToTripCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToTrip(Routeplanner.Model.Trip)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToDepartureCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToDeparture(Routeplanner.Model.Departure)"/>.</summary>
+        </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
             <summary>
             Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color

@@ -4,29 +4,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Routeplanner.Services.Database
 {
-    public class RouteCacheTable
+    public class SavedDeparturesTable
     {
         private readonly SQLiteDatabaseService _dbService;
 
-        public RouteCacheTable(SQLiteDatabaseService dbService)
+        public SavedDeparturesTable(SQLiteDatabaseService dbService)
         {
             _dbService = dbService;
         }
 
-        public async Task SaveRouteToCacheAsync(Route route) 
+        public async Task SaveDepartureAsync(Departure departure)
         {
             await _dbService.InitAsync();
-            await _dbService.Database.InsertAsync(route);
+            await _dbService.Database.InsertAsync(departure);
         }
 
-        public async Task<List<Route>> GetAllRoutes()
+        public async Task<List<Departure>> GetAllDepartures()
         {
             await _dbService.InitAsync();
-            return await _dbService.Database.Table<Route>().ToListAsync();
+            return await _dbService.Database.Table<Departure>().ToListAsync();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Routeplanner;
 
 public partial class SavedPage : ContentPage
 {
-	public SavedPage(SavedPage viewmodel)
+	public SavedPage(SavedViewModel viewmodel)
 	{
 		InitializeComponent();
         BindingContext = viewmodel;

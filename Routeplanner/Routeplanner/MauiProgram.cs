@@ -42,6 +42,8 @@ namespace Routeplanner
             builder.Services.AddSingleton<SQLiteDatabaseService>();
             builder.Services.AddSingleton<StationTable>();
             builder.Services.AddSingleton<RouteCacheTable>();
+            builder.Services.AddSingleton<SavedTripsTable>();
+            builder.Services.AddSingleton<SavedDeparturesTable>();
 
             // API Call Services
             builder.Services.AddTransient<TripsAPICallService>();

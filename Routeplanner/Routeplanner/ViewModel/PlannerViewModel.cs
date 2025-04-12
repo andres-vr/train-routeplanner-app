@@ -85,7 +85,7 @@ using System.Collections.ObjectModel;
                 {
                     _RouteCache.Add(route);
                 }
-        }
+            }
 
             // Handlers for text changes
             partial void OnStartPointChanged(string value) =>
@@ -116,7 +116,7 @@ using System.Collections.ObjectModel;
             {
             StartPoint = selectedItem.fromStation;
             Destination = selectedItem.toStation;
-            Console.WriteLine(StartPoint);
+
             IsStartPointSuggestionsVisible = false;
             IsDestinationSuggestionsVisible = false;
             }
@@ -138,39 +138,50 @@ using System.Collections.ObjectModel;
 
                 try
                 {
-                    // Save route to cache
-                    Route route = new Route
-                    {
-                        fromStation = StartPoint,
-                        toStation = Destination
-                    };
-                    await _routeCacheTable.SaveRouteToCacheAsync(route);
-                    _RouteCache.Add(route);
+                    await Task.Run(async () => {
+                        // Save route to cache
+                        Route route = new Route
+                        {
+                            fromStation = StartPoint,
+                            toStation = Destination
+                        };
 
-                    // Search query
-                    string startCode = await _stationTable.NameToCode(StartPoint);
-                    string destinationCode = await _stationTable.NameToCode(Destination);
-                    Console.WriteLine(startCode, destinationCode);
-                    var parameters = new APIParameters
-                    {
-                        fromStation = startCode,
-                        toStation = destinationCode,
-                        selectedDate = SelectedDate,
-                        selectedTime = SelectedTime
-                    };
+                        await _routeCacheTable.SaveRouteToCacheAsync(route);
 
-                    string response = await _tripService.FetchTripsAsync(parameters);
+                        // Update UI collection on main thread
+                        MainThread.BeginInvokeOnMainThread(() => {
+                            _RouteCache.Add(route);
+                        });
 
-                    JsonDocument apiResponse = JsonDocument.Parse(response);
+                        // Search query
+                        string startCode = await _stationTable.NameToCode(StartPoint);
+                        string destinationCode = await _stationTable.NameToCode(Destination);
+                        Console.WriteLine(startCode, destinationCode);
 
-                    List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
-                    if (_Trips.Count != 0)
-                        _Trips.Clear();
-                    foreach (var trip in trips)
-                    {
-                        _Trips.Add(trip);
-                    }
-                }
+                        var parameters = new APIParameters
+                        {
+                            fromStation = startCode,
+                            toStation = destinationCode,
+                            selectedDate = SelectedDate,
+                            selectedTime = SelectedTime
+                        };
+
+                        string response = await _tripService.FetchTripsAsync(parameters);
+                        JsonDocument apiResponse = JsonDocument.Parse(response);
+
+                        List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
+
+                        MainThread.BeginInvokeOnMainThread(() =>
+                        {
+                             if (_Trips.Count != 0)
+                             _Trips.Clear();
+                            foreach (var trip in trips)
+                            {
+                               _Trips.Add(trip);
+                            }
+                        });
+                    });
+            }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error: {ex.Message}");
@@ -182,6 +193,11 @@ using System.Collections.ObjectModel;
 
                 try
                 {
+                    if (responseData == null)
+                    {
+                        Console.WriteLine("trips not found");
+                        return tripsList;
+                    }
                     // Add logging to track method calls
                     Console.WriteLine("Starting ExtractTripsFromApiResponse");
 
@@ -194,39 +210,80 @@ using System.Collections.ObjectModel;
                     // Iterate through all trips in the response
                     for (int i = 0; i < tripsArray.GetArrayLength(); i++)
                     {
-                        Console.WriteLine($"Processing trip {i + 1}");
                         var tripData = tripsArray[i];
+                    Console.WriteLine("1");
 
-                        // Create a new Trip object for each trip in the API response
-                        Trip trip = new Trip
+                    // Create a new Trip object for each trip in the API response
+                    string startStation = tripData.GetProperty("legs")[0].GetProperty("origin").GetProperty("name").GetString();
+                    Console.WriteLine("2");
+                    string endStation = tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
+                                               .GetProperty("destination").GetProperty("name").GetString();
+                    Console.WriteLine("3");
+                    string startTime = DateTime.Parse(tripData.GetProperty("legs")[0]
+                                           .GetProperty("origin").GetProperty("actualDateTime").GetString())
+                                           .ToString("HH:mm");
+                    Console.WriteLine("4");
+                    string endTime = DateTime.Parse(tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
+                                           .GetProperty("destination").GetProperty("actualDateTime").GetString())
+                                           .ToString("HH:mm");
+
+                    string track;
+                    if (tripData.TryGetProperty("actualTrack", out JsonElement actualTrack))
+                    {
+                        track = actualTrack.ToString();
+                    }
+                    else if (tripData.TryGetProperty("plannedTrack", out JsonElement plannedTrack))
+                    {
+                        track = plannedTrack.ToString();    
+                    }
+                    else
+                    {
+                        track = "Unknown track";
+                    }
+                    string duration;
+                    if (tripData.TryGetProperty("actualDurationInMinutes", out JsonElement durationElement))
+                    {
+                        duration = $"{durationElement.GetInt32()} minutes";
+                    }
+                    else if (tripData.TryGetProperty("plannedDurationInMinutes", out JsonElement plannedDurationElement))
+                    {
+                        duration = $"{plannedDurationElement.GetInt32()} minutes";
+                    }
+                    else
+                    {
+                        duration = "Unknown duration";
+                    }
+                    Console.WriteLine("5");
+                    int connections = 0;
+                    if (tripData.TryGetProperty("transfers", out JsonElement transfersElement))
+                    {
+                        connections = transfersElement.GetInt32();
+                    }
+                    Console.WriteLine("6");
+                    Trip trip = new Trip
                         {
                             // Basic properties as before
-                            startStation = tripData.GetProperty("legs")[0].GetProperty("origin").GetProperty("name").GetString(),
-                            endStation = tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
-                                               .GetProperty("destination").GetProperty("name").GetString(),
-                            startTime = DateTime.Parse(tripData.GetProperty("legs")[0]
-                                               .GetProperty("origin").GetProperty("actualDateTime").GetString())
-                                               .ToString("HH:mm"),
-                            endTime = DateTime.Parse(tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
-                                               .GetProperty("destination").GetProperty("actualDateTime").GetString())
-                                               .ToString("HH:mm"),
-                            duration = $"{tripData.GetProperty("actualDurationInMinutes").GetInt32()} minutes",
-                            connections = tripData.GetProperty("transfers").GetInt32(),
-                            // Initialize stopList here
+                            startStation = startStation,
+                            endStation = endStation,
+                            startTime = startTime,
+                            endTime = endTime,
+                            track = track,
+                            duration = duration,
+                            connections = connections,
                             stopList = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase)
                         };
-
-                        // Process all stops for this trip at once
-                        ProcessAllStopsForTrip(tripData, trip);
-
-                        // Add the complete trip to our list
-                        tripsList.Add(trip);
+                    Console.WriteLine("7");
+                    // Process all stops for this trip at once
+                    ProcessAllStopsForTrip(tripData, trip);
+                    Console.WriteLine("8");
+                    // Add the complete trip to our list
+                    tripsList.Add(trip);
                         Console.WriteLine($"Trip {i + 1} processed with {trip.stopList.Count} stops");
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error in ExtractTripsFromApiResponse: {ex.Message}");
+                    Console.WriteLine($"ERROR: {ex.Message}");
                 }
 
                 return tripsList;
@@ -276,7 +333,7 @@ using System.Collections.ObjectModel;
                 }
             }
 
-            private async void UpdateSuggestions(string query, bool isStartPoint)
+            private void UpdateSuggestions(string query, bool isStartPoint)
             {
                 // use station cache to update suggestions
 

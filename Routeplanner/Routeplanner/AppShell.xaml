@@ -16,5 +16,9 @@
             <ShellContent
                 ContentTemplate="{DataTemplate local:DeparturesPage}"/>
         </Tab>
+        <Tab Title="Saved" Route="saved">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:SavedPage}"/>
+        </Tab>
     </TabBar>
 </Shell>

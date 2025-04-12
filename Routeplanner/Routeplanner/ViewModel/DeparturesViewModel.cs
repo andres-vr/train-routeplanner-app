@@ -68,23 +68,27 @@ namespace Routeplanner.ViewModel
 
             try
             {
-                string station = await _stationTable.NameToCode(_station);
+                await Task.Run(async () => {
+                    string station = await _stationTable.NameToCode(_station);
 
-                APIParameters parameters = new APIParameters
-                {
-                    fromStation = station
-                };
-                string response = await _departureService.FetchDeparturesAsync(parameters);
+                    APIParameters parameters = new APIParameters
+                    {
+                        fromStation = station
+                    };
+                    string response = await _departureService.FetchDeparturesAsync(parameters);
 
-                Console.Write(response);
-                JsonDocument apiResponse = JsonDocument.Parse(response);
-                List<Departure> departures = ExtractDeparturesFromApiResponse(apiResponse, _station);
-                if (_Departures.Count != 0)
-                    _Departures.Clear();
-                foreach (var departure in departures)
-                {
-                    _Departures.Add(departure);
-                }
+                    Console.Write(response);
+                    JsonDocument apiResponse = JsonDocument.Parse(response);
+                    List<Departure> departures = ExtractDeparturesFromApiResponse(apiResponse, _station);
+                    MainThread.BeginInvokeOnMainThread(() => {
+                        if (_Departures.Count != 0)
+                            _Departures.Clear();
+                        foreach (var departure in departures)
+                        {
+                            _Departures.Add(departure);
+                        }
+                    });
+                });
             }
             catch (Exception ex)
             {
@@ -184,7 +188,7 @@ namespace Routeplanner.ViewModel
             Console.WriteLine($"Added destination stop: {destinationName}");
         }
 
-        private async void UpdateSuggestions(string query, bool isStation)
+        private void UpdateSuggestions(string query, bool isStation)
         {
             // Handle empty query
             if (string.IsNullOrEmpty(query))
