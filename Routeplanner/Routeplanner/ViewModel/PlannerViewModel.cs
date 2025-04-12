@@ -261,17 +261,17 @@ using System.Collections.ObjectModel;
                     }
                     Console.WriteLine("6");
                     Trip trip = new Trip
-                        {
-                            // Basic properties as before
-                            startStation = startStation,
-                            endStation = endStation,
-                            startTime = startTime,
-                            endTime = endTime,
-                            track = track,
-                            duration = duration,
-                            connections = connections,
-                            stopList = new Dictionary<string, DateTime>(StringComparer.OrdinalIgnoreCase)
-                        };
+                    {
+                        // Basic properties as before
+                        startStation = startStation,
+                        endStation = endStation,
+                        startTime = startTime,
+                        endTime = endTime,
+                        track = track,
+                        duration = duration,
+                        connections = connections,
+                        stopList = new List<DateTimeEntry>()
+                    };
                     Console.WriteLine("7");
                     // Process all stops for this trip at once
                     ProcessAllStopsForTrip(tripData, trip);
@@ -307,7 +307,7 @@ using System.Collections.ObjectModel;
                         var stop = stops[k];
                         string stationName = stop.GetProperty("name").GetString();
 
-                        if (trip.stopList.ContainsKey(stationName))
+                        if (trip.DateTimeDictionary.ContainsKey(stationName))
                         {
                             Console.WriteLine($"Skipped duplicate stop: {stationName}");
                         }
@@ -326,7 +326,7 @@ using System.Collections.ObjectModel;
                                 continue;
                             }
 
-                            trip.stopList[stationName] = stopTime;
+                            trip.DateTimeDictionary[stationName] = stopTime;
                             Console.WriteLine($"Added stop: {stationName}");
                         }
                     }

@@ -127,9 +127,7 @@ namespace Routeplanner.ViewModel
                             Destination = departureData.GetProperty("direction").GetString(),
                             TrainType = departureData.GetProperty("product").GetProperty("longCategoryName").GetString(),
                             Track = departureData.GetProperty("actualTrack").GetString(),
-
-                            // Initialize Stops list
-                            Stops = new List<string>()
+                            Stops = new List<DepartureStop>()
                         };
 
                         // Process all route stations for this departure
@@ -157,7 +155,7 @@ namespace Routeplanner.ViewModel
         private static void ProcessRouteStationsForDeparture(JsonElement departureData, Departure departure, string currentStation)
         {
             // start station
-            departure.Stops.Add(currentStation);
+            departure.Stops.Add(new DepartureStop { StopName = currentStation });
             Console.WriteLine($"Added origin stop: {currentStation}");
 
             // Check if route stations are available
@@ -172,7 +170,7 @@ namespace Routeplanner.ViewModel
                     var station = routeStations[k];
                     string stationName = station.GetProperty("mediumName").GetString();
 
-                    departure.Stops.Add(stationName);
+                    departure.Stops.Add(new DepartureStop { StopName = stationName });
                     Console.WriteLine($"Added intermediate stop: {stationName}");
 
                 }
@@ -184,7 +182,7 @@ namespace Routeplanner.ViewModel
 
             // Add destination 
             string destinationName = departureData.GetProperty("direction").GetString();
-            departure.Stops.Add(destinationName);
+            departure.Stops.Add(new DepartureStop { StopName = destinationName });
             Console.WriteLine($"Added destination stop: {destinationName}");
         }
 

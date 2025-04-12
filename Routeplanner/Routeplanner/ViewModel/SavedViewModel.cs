@@ -54,8 +54,9 @@ namespace Routeplanner.ViewModel
                     Destination = "Rotterdam",
                     TrainType = "IC",
                     Track = "1",
-                    Stops = new List<string> { "Utrecht", "Den Haag" }
                 };
+                departure.Stops.Add(new DepartureStop { StopName = "Utrecht" });
+                departure.Stops.Add(new DepartureStop { StopName = "Eindhoven" });
                 await _departuresTable.SaveDepartureAsync(departure);
                 Console.Write("DEPARTURE ADDED");
                 _Departures.Add(departure);

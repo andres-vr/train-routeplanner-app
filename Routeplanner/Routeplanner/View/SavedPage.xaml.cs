@@ -1,12 +1,14 @@
 using Routeplanner.ViewModel;
 
-namespace Routeplanner;
-
-public partial class SavedPage : ContentPage
+namespace Routeplanner
 {
-	public SavedPage(SavedViewModel viewmodel)
-	{
-		InitializeComponent();
-        BindingContext = viewmodel;
+    public partial class SavedPage : ContentPage
+    {
+
+        public SavedPage(SavedViewModel viewmodel)
+        {
+            InitializeComponent();
+            BindingContext = viewmodel;
+        }
     }
 }

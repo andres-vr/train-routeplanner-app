@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLiteNetExtensionsAsync.Extensions;
 
 namespace Routeplanner.Services.Database
 {
@@ -19,13 +20,13 @@ namespace Routeplanner.Services.Database
         public async Task SaveTripAsync(Trip trip)
         {
             await _dbService.InitAsync();
-            await _dbService.Database.InsertAsync(trip);
+            await _dbService.Database.InsertWithChildrenAsync(trip, true);
         }
 
         public async Task<List<Trip>> GetAllTrips()
         {
             await _dbService.InitAsync();
-            return await _dbService.Database.Table<Trip>().ToListAsync();
+            return await _dbService.Database.GetAllWithChildrenAsync<Trip>();
         }
     }
 }
