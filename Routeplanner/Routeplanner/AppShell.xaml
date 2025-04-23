@@ -8,17 +8,22 @@
     Title="Routeplanner">
 
     <TabBar>
-        <Tab Title="Plan" Route="plan">
+        <Tab Title="Plan" Route="plan"
+             Icon="route.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:PlannerPage}"/>
         </Tab>
-        <Tab Title="Departures" Route="departures">
+        <Tab Title="Departures" Route="departures"
+              Icon="train.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:DeparturesPage}"/>
         </Tab>
-        <Tab Title="Saved" Route="saved">
+        <Tab Title="Saved" Route="saved"
+             Icon="heart.png">
             <ShellContent
                 ContentTemplate="{DataTemplate local:SavedPage}"/>
         </Tab>
     </TabBar>
+    <ShellContent Route="tripdetails" ContentTemplate="{DataTemplate local:TripDetailsPage}"/> 
+    <ShellContent Route="departuredetails" ContentTemplate="{DataTemplate local:DepartureDetailsPage}"/>
 </Shell>

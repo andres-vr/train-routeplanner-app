@@ -27,19 +27,19 @@
                                 <VerticalStackLayout Spacing="5">
                                     <HorizontalStackLayout Spacing="25">
                                         <HorizontalStackLayout>
-                                            <Label Text="{Binding startTime}" FontAttributes="Bold" />
+                                            <Label Text="{Binding StartTime}" FontAttributes="Bold" />
                                             <Label Text=" ➝ " />
-                                            <Label Text="{Binding endTime}" FontAttributes="Bold" />
+                                            <Label Text="{Binding EndTime}" FontAttributes="Bold" />
                                         </HorizontalStackLayout>
 
                                         <HorizontalStackLayout>
                                             <Label Text="⏱" />
-                                            <Label Text="{Binding duration}" />
+                                            <Label Text="{Binding Duration}" />
                                         </HorizontalStackLayout>
 
                                         <HorizontalStackLayout>
                                             <Label Text="🔗" />
-                                            <Label Text="{Binding connections}" />
+                                            <Label Text="{Binding Connections}" />
                                         </HorizontalStackLayout>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>

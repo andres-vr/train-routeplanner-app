@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Model;
 using Routeplanner.Services.Database;
 using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
 
 namespace Routeplanner.ViewModel
 {
@@ -46,10 +45,11 @@ namespace Routeplanner.ViewModel
         private async Task CreateDepartureInDB()
         {
             MainThread.BeginInvokeOnMainThread(async () => {
+                TimeSpan time = new TimeSpan(12, 0, 0);
                 Departure departure;
                 departure = new Departure
                 {
-                    Time = "12:00",
+                    Time = time,
                     Origin = "Amsterdam",
                     Destination = "Rotterdam",
                     TrainType = "IC",
@@ -63,10 +63,15 @@ namespace Routeplanner.ViewModel
             });
         }
 
+        private async Task createTripInDB()
+        {
+          
+        }
+
         [RelayCommand]
         private void GoToTrip(Trip selectedItem)
         {
-            Console.WriteLine($"Selected trip: {selectedItem.startStation} to {selectedItem.endStation}");
+            Console.WriteLine($"Selected trip: {selectedItem.StartStation} to {selectedItem.EndStation}");
         }
 
         [RelayCommand]

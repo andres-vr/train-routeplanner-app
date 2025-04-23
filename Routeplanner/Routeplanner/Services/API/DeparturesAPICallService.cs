@@ -27,7 +27,7 @@ namespace Routeplanner.Services.API
             {
                 var queryParams = new Dictionary<string, string>
             {
-                { "station", parameters.fromStation }
+                { "station", parameters.FromStation }
             };
 
                 var queryString = HttpUtility.ParseQueryString(string.Empty);

@@ -10,8 +10,8 @@ namespace Routeplanner.Model
     public class Route
     {
         [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public string fromStation { get; set; }
-        public string toStation { get; set; }
+        public int Id { get; set; }
+        public string FromStation { get; set; }
+        public string ToStation { get; set; }
     }
 }

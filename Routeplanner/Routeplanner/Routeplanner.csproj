@@ -78,6 +78,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="View\DepartureDetailsPage.xaml.cs">
+	    <DependentUpon>DepartureDetailsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\TripDetailsPage.xaml.cs">
+	    <DependentUpon>TripDetailsPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="View\SavedPage.xaml.cs">
 	    <DependentUpon>SavedPage.xaml</DependentUpon>
 	  </Compile>
@@ -93,6 +99,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\DepartureDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\TripDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\SavedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -8,10 +8,10 @@ namespace Routeplanner.Model
 {
     public class APIParameters
     {
-        public string fromStation { get; set; }
-        public string toStation { get; set; }
-        public DateTime selectedDate { get; set; }
-        public TimeSpan selectedTime { get; set; }
+        public string FromStation { get; set; }
+        public string ToStation { get; set; }
+        public DateTime SelectedDate { get; set; }
+        public TimeSpan SelectedTime { get; set; }
         //public string SelectedType { get; set; }
     }
 }

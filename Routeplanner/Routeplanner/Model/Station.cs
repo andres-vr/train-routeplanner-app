@@ -5,8 +5,8 @@ namespace Routeplanner.Model
     public class Station
     {
         [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public string name { get; set; }
-        public string code { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
     }
 }

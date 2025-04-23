@@ -23,7 +23,13 @@ namespace Routeplanner.Services.Database
             await _dbService.Database.InsertWithChildrenAsync(departure, true);
         }
 
-       public async Task<List<Departure>> GetAllDepartures()
+        public async Task RemoveDepartureAsync(Departure departure)
+        {
+            await _dbService.InitAsync();
+            await _dbService.Database.DeleteAsync(departure, true);
+        }
+
+        public async Task<List<Departure>> GetAllDepartures()
        {
            await _dbService.InitAsync();
            return await _dbService.Database.GetAllWithChildrenAsync<Departure>();

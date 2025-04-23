@@ -95,8 +95,9 @@
                 HorizontalOptions="Fill" />
 
             <CollectionView ItemsSource="{Binding _RouteCache}"
-             SelectionMode="None"
-             Grid.ColumnSpan="2">   
+            SelectionMode="None"
+            Grid.ColumnSpan="2"
+            IsVisible="{Binding IsRouteCacheVisible}">   
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Route">
                         <Grid Padding="10">
@@ -111,9 +112,9 @@
                                 <VerticalStackLayout Spacing="5">
                                     <HorizontalStackLayout Spacing="25">
                                         <VerticalStackLayout>
-                                            <Label Text="{Binding fromStation}" FontAttributes="Bold" />
+                                            <Label Text="{Binding FromStation}" FontAttributes="Bold" />
                                             <Label Text=" ➝ " />
-                                            <Label Text="{Binding toStation}" FontAttributes="Bold" />
+                                            <Label Text="{Binding ToStation}" FontAttributes="Bold" />
                                         </VerticalStackLayout>
 
                                     </HorizontalStackLayout>
@@ -141,19 +142,27 @@
                                 <VerticalStackLayout Spacing="5">
                                     <HorizontalStackLayout Spacing="25">
                                         <HorizontalStackLayout>
-                                            <Label Text="{Binding startTime}" FontAttributes="Bold" />
+                                            <Label Text="{Binding StartTime}" FontAttributes="Bold" />
                                             <Label Text=" ➝ " />
-                                            <Label Text="{Binding endTime}" FontAttributes="Bold" />
+                                            <Label Text="{Binding EndTime}" FontAttributes="Bold" />
                                         </HorizontalStackLayout>
 
                                         <HorizontalStackLayout>
                                             <Label Text="⏱" />
-                                            <Label Text="{Binding duration}" />
+                                            <Label Text="{Binding Duration}" />
                                         </HorizontalStackLayout>
 
                                         <HorizontalStackLayout>
                                             <Label Text="🔗" />
-                                            <Label Text="{Binding connections}" />
+                                            <Label Text="{Binding Connections}" />
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout>
+                                                <Button 
+                                                Text="Save Trip"
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="Center"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
+                                                CommandParameter="{Binding .}" />    
                                         </HorizontalStackLayout>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>

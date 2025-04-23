@@ -1,11 +1,11 @@
-﻿    using CommunityToolkit.Mvvm.ComponentModel;
-    using CommunityToolkit.Mvvm.Input;
-    using Routeplanner.Model;
-    using Routeplanner.Services.Database;
-    using Routeplanner.Services.Planner;
-using Routeplanner.Services.Repositories;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Routeplanner.Model;
+using Routeplanner.Services.Database;
+using Routeplanner.Services.Planner;
+using Routeplanner.Services;
 using System.Collections.ObjectModel;
-    using System.Text.Json;
+using System.Text.Json;
 
     namespace Routeplanner.ViewModel
     {
@@ -14,6 +14,8 @@ using System.Collections.ObjectModel;
             private readonly ITripService _tripService;
 
             private readonly StationTable _stationTable;
+
+            private readonly SavedTripsTable _savedTripsTable;
 
             private readonly RouteCacheTable _routeCacheTable;
 
@@ -56,14 +58,21 @@ using System.Collections.ObjectModel;
             [ObservableProperty]
             private bool _isDestinationSuggestionsVisible;
 
-            public PlannerViewModel(ITripService tripService, StationTable stationTable, RouteCacheTable routeCacheTable)
+            [ObservableProperty]
+            private bool _isRouteCacheVisible;
+
+            [ObservableProperty]
+            private string saveButtonText = "Save Trip";
+
+            public PlannerViewModel(ITripService tripService, StationTable stationTable, RouteCacheTable routeCacheTable, SavedTripsTable savedTripsTable)
             {
                 _tripService = tripService;
                 _stationTable = stationTable;
                 _routeCacheTable = routeCacheTable;
+                _savedTripsTable = savedTripsTable;
 
-                // Set default date range
-                _MinDate = DateTime.Today;
+            // Set default date range
+            _MinDate = DateTime.Today;
                 _MaxDate = DateTime.Today.AddYears(1);
                 SelectedDate = DateTime.Today;
                 SelectedTime = DateTime.Now.TimeOfDay;
@@ -75,12 +84,12 @@ using System.Collections.ObjectModel;
             private async Task CacheStationsAsync()
             {
                 var stations = await _stationTable.GetAllStations();
-                _stationCache = stations.Select(s => s.name).ToList();
+                _stationCache = stations.Select(s => s.Name).ToList();
             }
 
             private async Task GetRoutesFromCacheAsync()
             {
-                var routes = await _routeCacheTable.GetAllRoutes();
+                var routes = await _routeCacheTable.GetLast5Routes();
                 foreach (var route in routes)
                 {
                     _RouteCache.Add(route);
@@ -88,20 +97,31 @@ using System.Collections.ObjectModel;
             }
 
             // Handlers for text changes
-            partial void OnStartPointChanged(string value) =>
-                UpdateSuggestions(value, true);
-
-            partial void OnDestinationChanged(string value) =>
+            partial void OnStartPointChanged(string value)
+            {
                 UpdateSuggestions(value, false);
+                IsRouteCacheVisible = true;
+            }
+
+            partial void OnDestinationChanged(string value) 
+            {
+                UpdateSuggestions(value, false);
+                IsRouteCacheVisible = true;
+            }
 
             [RelayCommand]
-            private void Completed() => HideAllSuggestions();
+            private void Completed() 
+            {
+                HideAllSuggestions();
+                IsRouteCacheVisible = false;
+            }   
 
             [RelayCommand]
             private void SelectStartPoint(string selectedItem)
             {
                 StartPoint = selectedItem;
                 IsStartPointSuggestionsVisible = false;
+                IsRouteCacheVisible = false;
             }
 
             [RelayCommand]
@@ -109,83 +129,94 @@ using System.Collections.ObjectModel;
             {
                 Destination = selectedItem;
                 IsDestinationSuggestionsVisible = false;
+                IsRouteCacheVisible = false;
             }
 
             [RelayCommand]
             private void SelectRoute(Route selectedItem)
             {
-            StartPoint = selectedItem.fromStation;
-            Destination = selectedItem.toStation;
+            StartPoint = selectedItem.FromStation;
+            Destination = selectedItem.ToStation;
 
             IsStartPointSuggestionsVisible = false;
             IsDestinationSuggestionsVisible = false;
             }
 
             [RelayCommand]
-            private void GoToTrip(Trip selectedItem)
+            private async Task GoToTripAsync(Trip selectedItem)
             {
-            Console.WriteLine($"Selected trip: {selectedItem.startStation} to {selectedItem.endStation}");
+                if (selectedItem == null) return;
+
+                var viewModel = new TripDetailsViewModel(selectedItem);
+                var page = new TripDetailsPage(viewModel)
+                {
+                    BindingContext = viewModel
+                };
+
+                await Application.Current.MainPage.Navigation.PushAsync(page);
             }
 
-            [RelayCommand]
+        [RelayCommand]
             private async Task Search()
             {
+                // remove route cache from screen
+                IsRouteCacheVisible = false;
                 if (string.IsNullOrWhiteSpace(StartPoint) || string.IsNullOrWhiteSpace(Destination))
-                {
-                    Console.WriteLine("Please enter valid station names.");
-                    return;
-                }
+                    {
+                        Console.WriteLine("Please enter valid station names.");
+                        return;
+                    }
 
-                try
-                {
-                    await Task.Run(async () => {
-                        // Save route to cache
-                        Route route = new Route
-                        {
-                            fromStation = StartPoint,
-                            toStation = Destination
-                        };
-
-                        await _routeCacheTable.SaveRouteToCacheAsync(route);
-
-                        // Update UI collection on main thread
-                        MainThread.BeginInvokeOnMainThread(() => {
-                            _RouteCache.Add(route);
-                        });
-
-                        // Search query
-                        string startCode = await _stationTable.NameToCode(StartPoint);
-                        string destinationCode = await _stationTable.NameToCode(Destination);
-                        Console.WriteLine(startCode, destinationCode);
-
-                        var parameters = new APIParameters
-                        {
-                            fromStation = startCode,
-                            toStation = destinationCode,
-                            selectedDate = SelectedDate,
-                            selectedTime = SelectedTime
-                        };
-
-                        string response = await _tripService.FetchTripsAsync(parameters);
-                        JsonDocument apiResponse = JsonDocument.Parse(response);
-
-                        List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
-
-                        MainThread.BeginInvokeOnMainThread(() =>
-                        {
-                             if (_Trips.Count != 0)
-                             _Trips.Clear();
-                            foreach (var trip in trips)
+                    try
+                    {
+                        await Task.Run(async () => {
+                            // Save route to cache
+                            Route route = new Route
                             {
-                               _Trips.Add(trip);
-                            }
+                                FromStation = StartPoint,
+                                ToStation = Destination
+                            };
+
+                            await _routeCacheTable.SaveRouteToCacheAsync(route);
+
+                            // Update UI collection on main thread
+                            MainThread.BeginInvokeOnMainThread(() => {
+                                _RouteCache.Add(route);
+                            });
+
+                            // Search query
+                            string startCode = await _stationTable.NameToCode(StartPoint);
+                            string destinationCode = await _stationTable.NameToCode(Destination);
+                            Console.WriteLine(startCode, destinationCode);
+
+                            var parameters = new APIParameters
+                            {
+                                FromStation = startCode,
+                                ToStation = destinationCode,
+                                SelectedDate = SelectedDate,
+                                SelectedTime = SelectedTime
+                            };
+
+                            string response = await _tripService.FetchTripsAsync(parameters);
+                            JsonDocument apiResponse = JsonDocument.Parse(response);
+
+                            List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
+
+                            MainThread.BeginInvokeOnMainThread(() =>
+                            {
+                                 if (_Trips.Count != 0)
+                                 _Trips.Clear();
+                                foreach (var trip in trips)
+                                {
+                                   _Trips.Add(trip);
+                                }
+                            });
                         });
-                    });
-            }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error: {ex.Message}");
                 }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
             }
             public static List<Trip> ExtractTripsFromApiResponse(JsonDocument responseData)
             {
@@ -218,15 +249,25 @@ using System.Collections.ObjectModel;
                     Console.WriteLine("2");
                     string endStation = tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
                                                .GetProperty("destination").GetProperty("name").GetString();
-                    Console.WriteLine("3");
-                    string startTime = DateTime.Parse(tripData.GetProperty("legs")[0]
-                                           .GetProperty("origin").GetProperty("actualDateTime").GetString())
-                                           .ToString("HH:mm");
-                    Console.WriteLine("4");
-                    string endTime = DateTime.Parse(tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
-                                           .GetProperty("destination").GetProperty("actualDateTime").GetString())
-                                           .ToString("HH:mm");
+                    /*Console.WriteLine("3");
+                    string dateTimeStr = tripData.GetProperty("legs")[0]
+                               .GetProperty("origin")
+                               .GetProperty("actualDateTime")
+                               .GetString();
 
+                    DateTime startTime = DateTime.Parse(dateTimeStr);
+
+                    string formattedTime = startTime.ToString("HH:mm");
+
+                    Console.WriteLine("4");
+                    string dateTimeStr = (tripData.GetProperty("legs")[tripData.GetProperty("legs").GetArrayLength() - 1]
+                                           .GetProperty("destination").GetProperty("actualDateTime").GetString());
+                    DateTime endTime = DateTime.Parse(dateTimeStr);
+
+                    string formattedEndTime = endTime.ToString("HH:mm");
+                    */
+                    string formattedStartTime = "12:00";
+                    string formattedEndTime = "12:00";
                     string track;
                     if (tripData.TryGetProperty("actualTrack", out JsonElement actualTrack))
                     {
@@ -240,18 +281,20 @@ using System.Collections.ObjectModel;
                     {
                         track = "Unknown track";
                     }
-                    string duration;
+                    Console.Write("no track issues");
+                    TimeSpan duration;
+
                     if (tripData.TryGetProperty("actualDurationInMinutes", out JsonElement durationElement))
                     {
-                        duration = $"{durationElement.GetInt32()} minutes";
+                        duration = TimeSpan.FromMinutes(durationElement.GetInt32());
                     }
                     else if (tripData.TryGetProperty("plannedDurationInMinutes", out JsonElement plannedDurationElement))
                     {
-                        duration = $"{plannedDurationElement.GetInt32()} minutes";
+                        duration = TimeSpan.FromMinutes(plannedDurationElement.GetInt32());
                     }
                     else
                     {
-                        duration = "Unknown duration";
+                        duration = TimeSpan.Zero; 
                     }
                     Console.WriteLine("5");
                     int connections = 0;
@@ -263,14 +306,14 @@ using System.Collections.ObjectModel;
                     Trip trip = new Trip
                     {
                         // Basic properties as before
-                        startStation = startStation,
-                        endStation = endStation,
-                        startTime = startTime,
-                        endTime = endTime,
-                        track = track,
-                        duration = duration,
-                        connections = connections,
-                        stopList = new List<DateTimeEntry>()
+                        StartStation = startStation,
+                        EndStation = endStation,
+                        StartTime = formattedStartTime,
+                        EndTime = formattedEndTime,
+                        Track = track,
+                        Duration = duration,
+                        Connections = connections,
+                        StopList = new List<DateTimeEntry>()
                     };
                     Console.WriteLine("7");
                     // Process all stops for this trip at once
@@ -278,7 +321,7 @@ using System.Collections.ObjectModel;
                     Console.WriteLine("8");
                     // Add the complete trip to our list
                     tripsList.Add(trip);
-                        Console.WriteLine($"Trip {i + 1} processed with {trip.stopList.Count} stops");
+                        Console.WriteLine($"Trip {i + 1} processed with {trip.StopList.Count} stops");
                     }
                 }
                 catch (Exception ex)
@@ -361,7 +404,22 @@ using System.Collections.ObjectModel;
                 }
             }
 
-            private void HideAllSuggestions()
+        [RelayCommand]
+        private async Task SaveAsync(Trip trip)
+        {
+            if (saveButtonText == "Save") 
+            {
+                saveButtonText = "Unsave";
+                // Save the trip to the database
+                await _savedTripsTable.SaveTripAsync(trip);  
+            }
+            else 
+            {
+                saveButtonText = "Save";
+                await _savedTripsTable.RemoveTripAsync(trip);
+            }   
+        }
+        private void HideAllSuggestions()
             {
                 IsStartPointSuggestionsVisible = false;
                 IsDestinationSuggestionsVisible = false;

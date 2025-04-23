@@ -1,9 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Model;
-using Routeplanner.Services.Database;
 using Routeplanner.Services.Departures;
-using Routeplanner.Services.Repositories;
+using Routeplanner.Services;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 
@@ -39,7 +38,7 @@ namespace Routeplanner.ViewModel
         private async Task CacheStationsAsync()
         {
             var stations = await _stationTable.GetAllStations();
-            _stationCache = stations.Select(s => s.name).ToList();
+            _stationCache = stations.Select(s => s.Name).ToList();
         }
 
         // Handlers for text changes
@@ -57,6 +56,19 @@ namespace Routeplanner.ViewModel
         }
 
         [RelayCommand]
+        private async Task GoToDepartureAsync(Departure selectedItem)
+        {
+            if (selectedItem == null) return;
+
+            var viewModel = new DepartureDetailsViewModel(selectedItem);
+            var page = new DepartureDetailsPage(viewModel)
+            {
+                BindingContext = viewModel
+            };
+
+            await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+        [RelayCommand]
         private async Task Search()
         {
             Console.WriteLine("hoi");
@@ -73,7 +85,7 @@ namespace Routeplanner.ViewModel
 
                     APIParameters parameters = new APIParameters
                     {
-                        fromStation = station
+                        FromStation = station
                     };
                     string response = await _departureService.FetchDeparturesAsync(parameters);
 
@@ -116,13 +128,15 @@ namespace Routeplanner.ViewModel
                     Console.WriteLine($"Processing departure {i + 1}");
                     var departureData = departuresArray[i];
 
+                    DateTime time = DateTime.Parse(departureData.GetProperty("actualDateTime").GetString());
+                    string formattedTime = time.ToString("HH:mm");
+
                     try
                     {
                         // Create a new Departure object for each departure in the API response
                         Departure departure = new Departure
                         {
-                            Time = DateTime.Parse(departureData.GetProperty("actualDateTime").GetString())
-                            .ToString("HH:mm"),
+                            Time = TimeSpan.Parse(formattedTime),
                             Origin = currentStation,
                             Destination = departureData.GetProperty("direction").GetString(),
                             TrainType = departureData.GetProperty("product").GetProperty("longCategoryName").GetString(),

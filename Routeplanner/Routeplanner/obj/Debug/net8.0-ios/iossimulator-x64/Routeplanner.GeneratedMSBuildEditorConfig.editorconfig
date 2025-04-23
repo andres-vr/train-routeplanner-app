@@ -43,6 +43,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Routeplanner.Resources.Sty
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Apps/train-routeplanner-app/Routeplanner/Routeplanner/View/DepartureDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Routeplanner.View.DepartureDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\DepartureDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\DepartureDetailsPage.xaml
+
 [C:/Apps/train-routeplanner-app/Routeplanner/Routeplanner/View/DeparturesPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Routeplanner.View.DeparturesPage.xaml
@@ -60,3 +66,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Routeplanner.View.SavedPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\SavedPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\SavedPage.xaml
+
+[C:/Apps/train-routeplanner-app/Routeplanner/Routeplanner/View/TripDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Routeplanner.View.TripDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\TripDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\TripDetailsPage.xaml

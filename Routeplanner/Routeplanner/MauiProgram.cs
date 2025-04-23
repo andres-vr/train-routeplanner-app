@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Routeplanner.Model;
 using Routeplanner.Services;
 using Routeplanner.Services.API;
 using Routeplanner.Services.Database;
 using Routeplanner.Services.Departures;
 using Routeplanner.Services.Planner;
-using Routeplanner.Services.Repositories;
 using Routeplanner.ViewModel;
 
 namespace Routeplanner
@@ -29,10 +29,16 @@ namespace Routeplanner
             builder.Services.AddSingleton<DeparturesPage>();
             builder.Services.AddSingleton<SavedPage>();
 
+            // Models 
+            builder.Services.AddSingleton<Trip>();
+            builder.Services.AddSingleton<Departure>();
+
             // ViewModels
             builder.Services.AddSingleton<PlannerViewModel>();
             builder.Services.AddSingleton<DeparturesViewModel>();
             builder.Services.AddSingleton<SavedViewModel>();
+            builder.Services.AddSingleton<TripDetailsViewModel>();
+            builder.Services.AddSingleton<DepartureDetailsViewModel>();
 
             // Services
             builder.Services.AddSingleton<ITripService, TripService>();

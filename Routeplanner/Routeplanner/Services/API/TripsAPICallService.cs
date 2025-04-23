@@ -22,15 +22,15 @@ namespace Routeplanner.Services
             try
             {
                 // Combine them into a single DateTime
-                DateTime combinedDateTime = parameters.selectedDate.Date.Add(parameters.selectedTime);
+                DateTime combinedDateTime = parameters.SelectedDate.Date.Add(parameters.SelectedTime);
 
                 // Format according to RFC 3339
                 string formattedDateTime = combinedDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffzzz");
 
                 var queryParams = new Dictionary<string, string>
             {
-                { "fromStation", parameters.fromStation },
-                { "toStation", parameters.toStation },
+                { "fromStation", parameters.FromStation },
+                { "toStation", parameters.ToStation },
                 { "originWalk", "false" },
                 { "originBike", "false" },
                 { "originCar", "false" },

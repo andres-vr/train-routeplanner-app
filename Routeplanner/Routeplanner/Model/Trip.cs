@@ -14,36 +14,36 @@ namespace Routeplanner.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string startStation { get; set; }
-        public string endStation { get; set; }
-        public string track { get; set; }
-        public string startTime { get; set; }
-        public string endTime { get; set; }
-        public string duration { get; set; }
-        public int connections { get; set; }
+        public string StartStation { get; set; }
+        public string EndStation { get; set; }
+        public string Track { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+        public TimeSpan Duration { get; set; }
+        public int Connections { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<DateTimeEntry> stopList { get; set; } = new List<DateTimeEntry>();
+        public List<DateTimeEntry> StopList { get; set; } = new List<DateTimeEntry>();
 
         [Ignore]
         public Dictionary<string, DateTime> DateTimeDictionary
         {
-            get => stopList?.ToDictionary(e => e.Key, e => e.DateValue) ?? new Dictionary<string, DateTime>();
+            get => StopList?.ToDictionary(e => e.Key, e => e.Time) ?? new Dictionary<string, DateTime>();
             set
             {
-                if (stopList == null)
-                    stopList = new List<DateTimeEntry>();
+                if (StopList == null)
+                    StopList = new List<DateTimeEntry>();
                 else
-                    stopList.Clear();
+                    StopList.Clear();
 
                 if (value != null)
                 {
                     foreach (var pair in value)
                     {
-                        stopList.Add(new DateTimeEntry
+                        StopList.Add(new DateTimeEntry
                         {
                             Key = pair.Key,
-                            DateValue = pair.Value
+                            Time = pair.Value
                         });
                     }
                 }
@@ -63,6 +63,6 @@ namespace Routeplanner.Model
 
         public string Key { get; set; }
 
-        public DateTime DateValue { get; set; }
+        public DateTime Time { get; set; }
     }
 }

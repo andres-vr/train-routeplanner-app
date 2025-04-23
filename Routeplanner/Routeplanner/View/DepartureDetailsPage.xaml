@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:Routeplanner.Model"
+             xmlns:viewmodel="clr-namespace:Routeplanner.ViewModel"
+             x:Class="Routeplanner.DepartureDetailsPage"
+             x:DataType="viewmodel:DepartureDetailsViewModel">
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+            <ScrollView>
+                <StackLayout Padding="20">
+                    <Label Text="{Binding Departure.Origin}" FontSize="24" FontAttributes="Bold"/>
+                    <Label Text="{Binding Departure.Destination}" FontSize="16"/>
+                    <Label Text="⏱" />
+                    <Label Text="{Binding Departure.Time}" />
+                    <Label Text="🛤️" />
+                    <Label Text="{Binding Departure.Track}" />
+
+                    <CollectionView ItemsSource="{Binding Departure}"
+                       SelectionMode="None"
+                       Grid.ColumnSpan="2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:DepartureStop">
+                                <Grid Padding="10">
+                                    <Border Style="{StaticResource CardView}" Padding="10">
+                                        <!-- One-row horizontal layout -->
+                                        <VerticalStackLayout Spacing="5">
+                                            <HorizontalStackLayout Spacing="25">
+                                                <Label Text="{Binding StopName}" FontAttributes="Bold" />
+                                            </HorizontalStackLayout>
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

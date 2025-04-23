@@ -9,6 +9,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Station">
             <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._station"/>
@@ -36,6 +37,12 @@
         <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SelectStationCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.SelectStation(System.String)"/>.</summary>
         </member>
+        <member name="F:Routeplanner.ViewModel.DeparturesViewModel.goToDepartureCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.GoToDepartureCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.GoToDepartureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.GoToDepartureAsync(Routeplanner.Model.Departure)"/>.</summary>
+        </member>
         <member name="F:Routeplanner.ViewModel.DeparturesViewModel.searchCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.SearchCommand"/>.</summary>
         </member>
@@ -43,6 +50,7 @@
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.DeparturesViewModel.Search"/>.</summary>
         </member>
         <member name="T:Routeplanner.ViewModel.PlannerViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -84,6 +92,12 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsDestinationSuggestionsVisible">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isDestinationSuggestionsVisible"/>
         </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsRouteCacheVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isRouteCacheVisible"/>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SaveButtonText">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel.saveButtonText"/>
+        </member>
         <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnStartPointChanged(System.String)">
             <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
@@ -122,13 +136,19 @@
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.GoToTripCommand"/>.</summary>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.GoToTripCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.GoToTrip(Routeplanner.Model.Trip)"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.GoToTripAsync(Routeplanner.Model.Trip)"/>.</summary>
         </member>
         <member name="F:Routeplanner.ViewModel.PlannerViewModel.searchCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand"/>.</summary>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SearchCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Search"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SaveAsync(Routeplanner.Model.Trip)"/>.</summary>
         </member>
         <member name="T:Routeplanner.ViewModel.SavedViewModel">
             <inheritdoc/>
@@ -314,6 +334,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDestinationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDestinationSuggestionsVisible" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRouteCacheVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRouteCacheVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -361,6 +387,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDestinationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDestinationSuggestionsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRouteCacheVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRouteCacheVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
         </member>
     </members>
 </doc>
