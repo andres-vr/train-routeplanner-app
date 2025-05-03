@@ -14,17 +14,20 @@
                 <StackLayout Padding="20">
                     <Label Text="{Binding Departure.Origin}" FontSize="24" FontAttributes="Bold"/>
                     <Label Text="{Binding Departure.Destination}" FontSize="16"/>
-                    <Label Text="⏱" />
-                    <Label Text="{Binding Departure.Time}" />
-                    <Label Text="🛤️" />
-                    <Label Text="{Binding Departure.Track}" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="⏱" />
+                        <Label Text="{Binding Departure.Time}" />
+                    </HorizontalStackLayout>
 
-                    <CollectionView ItemsSource="{Binding Departure}"
-                       SelectionMode="None"
-                       Grid.ColumnSpan="2">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="🛤️" />
+                        <Label Text="{Binding Departure.Track}" />
+                    </HorizontalStackLayout>
+
+                    <CollectionView ItemsSource="{Binding Departure.Stops}" SelectionMode="None" Grid.ColumnSpan="2">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="model:DepartureStop">
-                                <Grid Padding="10">
+                                <Grid Padding="2">
                                     <Border Style="{StaticResource CardView}" Padding="10">
                                         <!-- One-row horizontal layout -->
                                         <VerticalStackLayout Spacing="5">

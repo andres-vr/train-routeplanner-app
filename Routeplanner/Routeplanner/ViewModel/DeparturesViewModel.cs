@@ -5,6 +5,7 @@ using Routeplanner.Services.Departures;
 using Routeplanner.Services;
 using System.Collections.ObjectModel;
 using System.Text.Json;
+using Routeplanner.Services.Database;
 
 namespace Routeplanner.ViewModel
 {
@@ -14,9 +15,14 @@ namespace Routeplanner.ViewModel
 
         private readonly StationTable _stationTable;
 
+        private readonly SavedDeparturesTable _savedDeparturesTable;
+
         public ObservableCollection<Departure> _Departures { get; } = new();
 
         private List<string> _stationCache = new();
+
+        [ObservableProperty]
+        private string saveButtonText;
 
         [ObservableProperty]
         private string _station;
@@ -27,12 +33,22 @@ namespace Routeplanner.ViewModel
         [ObservableProperty]
         private bool _isStationSuggestionsVisible;
 
-        public DeparturesViewModel(IDepartureService departureService, StationTable stationTable)
+        [ObservableProperty]
+        private string saveIconGlyph = "\ue158";
+
+        public DeparturesViewModel(IDepartureService departureService, StationTable stationTable, SavedDeparturesTable savedDepartureTable)
         {
             _departureService = departureService;
             _stationTable = stationTable;
+            _savedDeparturesTable = savedDepartureTable;
 
             Task.Run(CacheStationsAsync);
+        }
+
+        [RelayCommand]
+        private async Task PageAppearing()
+        {
+            await Task.Run(CacheStationsAsync);
         }
 
         private async Task CacheStationsAsync()
@@ -41,18 +57,19 @@ namespace Routeplanner.ViewModel
             _stationCache = stations.Select(s => s.Name).ToList();
         }
 
-        // Handlers for text changes
-        partial void OnStationChanged(string value) =>
+        //Handler for text changes
+        partial void OnStationChanged(string value)
+        {
             UpdateSuggestions(value, true);
-
+        }
         [RelayCommand]
         private void Completed() => HideAllSuggestions();
 
         [RelayCommand]
         private void SelectStation(string selectedItem)
         {
-            _station = selectedItem;
-            IsStationSuggestionsVisible = false;
+            Station = selectedItem;
+            HideAllSuggestions();
         }
 
         [RelayCommand]
@@ -67,6 +84,20 @@ namespace Routeplanner.ViewModel
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+        [RelayCommand]
+        private async Task SaveAsync(Departure departure)
+        {
+            if (SaveIconGlyph == "\ue158") // outlined
+            {
+                SaveIconGlyph = "\ue87d"; // filled heart
+                await _savedDeparturesTable.SaveDepartureAsync(departure);
+            }
+            else
+            {
+                SaveIconGlyph = "\ue158";
+                await _savedDeparturesTable.RemoveDepartureAsync(departure);
+            }
         }
         [RelayCommand]
         private async Task Search()
@@ -225,8 +256,8 @@ namespace Routeplanner.ViewModel
                 foreach (var item in results)
                     StationSuggestions.Add(item);
 
-                // toon suggesties als er resultaten zijn en de query niet leeg is
-                IsStationSuggestionsVisible = results.Any() && !string.IsNullOrEmpty(query);
+                // toon suggesties als er resultaten zijn 
+                IsStationSuggestionsVisible = true;
             }
         }
 

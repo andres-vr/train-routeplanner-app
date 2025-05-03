@@ -76,10 +76,14 @@ using System.Text.Json;
                 _MaxDate = DateTime.Today.AddYears(1);
                 SelectedDate = DateTime.Today;
                 SelectedTime = DateTime.Now.TimeOfDay;
+            }
 
-                Task.Run(CacheStationsAsync);
-                Task.Run(GetRoutesFromCacheAsync);
-        }
+            [RelayCommand]
+            private async Task PageAppearing()
+            {
+            await Task.Run(CacheStationsAsync);
+            await Task.Run(GetRoutesFromCacheAsync);
+            }
 
             private async Task CacheStationsAsync()
             {
@@ -99,7 +103,7 @@ using System.Text.Json;
             // Handlers for text changes
             partial void OnStartPointChanged(string value)
             {
-                UpdateSuggestions(value, false);
+                UpdateSuggestions(value, true);
                 IsRouteCacheVisible = true;
             }
 
@@ -407,15 +411,15 @@ using System.Text.Json;
         [RelayCommand]
         private async Task SaveAsync(Trip trip)
         {
-            if (saveButtonText == "Save") 
+            if (saveButtonText == "Save Trip") 
             {
-                saveButtonText = "Unsave";
+                saveButtonText = "Unsave Trip";
                 // Save the trip to the database
                 await _savedTripsTable.SaveTripAsync(trip);  
             }
             else 
             {
-                saveButtonText = "Save";
+                saveButtonText = "Save Trip";
                 await _savedTripsTable.RemoveTripAsync(trip);
             }   
         }

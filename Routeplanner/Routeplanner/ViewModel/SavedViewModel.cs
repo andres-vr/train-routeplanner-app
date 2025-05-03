@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Model;
 using Routeplanner.Services.Database;
 using System.Collections.ObjectModel;
+using Routeplanner.ViewModel;
 
 namespace Routeplanner.ViewModel
 {
@@ -10,6 +11,9 @@ namespace Routeplanner.ViewModel
     {
         private readonly SavedTripsTable _tripsTable;
         private readonly SavedDeparturesTable _departuresTable;
+
+        [ObservableProperty]
+        private string saveButtonText = "Unsave Trip";
 
         public ObservableCollection<Trip> _Trips { get; } = new();
 
@@ -19,9 +23,13 @@ namespace Routeplanner.ViewModel
         {
             _tripsTable = tripsTable;
             _departuresTable = departuresTable;
-            Task.Run(GetTripsFromDB);
-            Task.Run(GetDeparturesFromDB);
-            Task.Run(CreateDepartureInDB);
+        }
+
+        [RelayCommand]
+        private async Task PageAppearing()
+        {
+            await Task.Run(GetTripsFromDB);
+            await Task.Run(GetDeparturesFromDB);
         }
 
         private async Task GetTripsFromDB()
@@ -42,42 +50,54 @@ namespace Routeplanner.ViewModel
             }
         }
 
-        private async Task CreateDepartureInDB()
+        [RelayCommand]
+        private async Task UnsaveAsync(Departure departure)
         {
-            MainThread.BeginInvokeOnMainThread(async () => {
-                TimeSpan time = new TimeSpan(12, 0, 0);
-                Departure departure;
-                departure = new Departure
+            if (saveButtonText == "Unsave Departure")
+            {
+                MainThread.BeginInvokeOnMainThread(async () =>
                 {
-                    Time = time,
-                    Origin = "Amsterdam",
-                    Destination = "Rotterdam",
-                    TrainType = "IC",
-                    Track = "1",
-                };
-                departure.Stops.Add(new DepartureStop { StopName = "Utrecht" });
-                departure.Stops.Add(new DepartureStop { StopName = "Eindhoven" });
-                await _departuresTable.SaveDepartureAsync(departure);
-                Console.Write("DEPARTURE ADDED");
-                _Departures.Add(departure);
+                    await _departuresTable.RemoveDepartureAsync(departure);
+                    _Departures.Remove(departure);
+                });
+            }
+        }
+
+        /*private async Task RemoveTripFromDB(Trip trip)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await _tripsTable.RemoveTripAsync(trip);
+                _Trips.Remove(trip);
             });
-        }
+        }*/
 
-        private async Task createTripInDB()
+        [RelayCommand]
+        private async void GoToTripAsync(Trip selectedItem)
         {
-          
+            if (selectedItem == null) return;
+
+            var viewModel = new TripDetailsViewModel(selectedItem);
+            var page = new TripDetailsPage(viewModel)
+            {
+                BindingContext = viewModel
+            };
+
+            await Application.Current.MainPage.Navigation.PushAsync(page);
         }
 
         [RelayCommand]
-        private void GoToTrip(Trip selectedItem)
+        private async void GoToDepartureAsync(Departure selectedItem)
         {
-            Console.WriteLine($"Selected trip: {selectedItem.StartStation} to {selectedItem.EndStation}");
-        }
+            if (selectedItem == null) return;
 
-        [RelayCommand]
-        private void GoToDeparture(Departure selectedItem)
-        {
-            Console.WriteLine($"Selected trip: {selectedItem.Origin}");
+            var viewModel = new DepartureDetailsViewModel(selectedItem);
+            var page = new DepartureDetailsPage(viewModel)
+            {
+                BindingContext = viewModel
+            };
+
+            await Application.Current.MainPage.Navigation.PushAsync(page);
         }
     }
 }

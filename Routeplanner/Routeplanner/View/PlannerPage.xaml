@@ -6,7 +6,9 @@
              xmlns:viewmodel="clr-namespace:Routeplanner.ViewModel"
              x:Class="Routeplanner.PlannerPage"
              x:DataType="viewmodel:PlannerViewModel">
-
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding PageAppearingCommand}" />
+    </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
@@ -157,12 +159,12 @@
                                             <Label Text="{Binding Connections}" />
                                         </HorizontalStackLayout>
                                         <HorizontalStackLayout>
-                                                <Button 
-                                                Text="Save Trip"
+                                            <Button 
+                                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveButtonText}"
                                                 VerticalOptions="Center"
                                                 HorizontalOptions="Center"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
-                                                CommandParameter="{Binding .}" />    
+                                                CommandParameter="{Binding .}" />
                                         </HorizontalStackLayout>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>

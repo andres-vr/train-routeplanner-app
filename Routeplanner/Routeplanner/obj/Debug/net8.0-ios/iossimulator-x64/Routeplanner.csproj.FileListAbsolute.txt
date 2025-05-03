@@ -20,10 +20,14 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\io
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.jpg
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.jpg
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\route.png
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\heart.png
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\train.png
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.outputs
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.stamp
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\MaterialIcons-Regular.ttf
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\f\OpenSans-Semibold.ttf
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\actool\_PartialAppManifest.items
@@ -322,9 +326,6 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-ios\io
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\train.png
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\heart.png
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\resizetizer\r\Resources\route.png
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\XamlC.stamp
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\Routepla.D315244B.Up2Date
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-ios\iossimulator-x64\Routeplanner.genruntimeconfig.cache

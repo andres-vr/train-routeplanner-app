@@ -17,8 +17,12 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-window
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauisplash.stamp
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.stamp
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\MaterialIcons-Regular.ttf
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\train.scale-100.png
+C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\route.scale-100.png
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.jpg
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.jpg
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.jpg
@@ -169,9 +173,6 @@ C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-window
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\train.scale-100.png
-C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\route.scale-100.png
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlC.stamp
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Routepla.D315244B.Up2Date
 C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Routeplanner.genruntimeconfig.cache
