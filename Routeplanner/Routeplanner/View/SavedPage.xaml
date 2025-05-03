@@ -13,7 +13,12 @@
         <VerticalStackLayout
         Padding="30,0"
         Spacing="25">
-            <CollectionView ItemsSource="{Binding _Trips}"
+            <Button
+                Text="Clear Saved Data"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=ClearCommand}"
+                CommandParameter="{Binding .}"
+                />
+            <CollectionView ItemsSource="{Binding Trips}"
               SelectionMode="None"
               Grid.ColumnSpan="2">
                 <CollectionView.ItemTemplate>
@@ -22,8 +27,8 @@
                             <Border Style="{StaticResource CardView}" Padding="10">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
-                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=GoToTripCommand}"
-                         CommandParameter="{Binding .}" />
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=GoToTripCommand}"
+                                    CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <!-- One-row horizontal layout -->
@@ -46,9 +51,8 @@
                                         </HorizontalStackLayout>
 
                                         <Button Text="Save Departure"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveCommand}"
-                                        CommandParameter="{Binding .}"
-                                        HorizontalOptions="Start" />    
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
+                                        CommandParameter="{Binding .}"/>    
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
                             </Border>
@@ -57,9 +61,9 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <CollectionView ItemsSource="{Binding _Departures}"
-             SelectionMode="None"
-             Grid.ColumnSpan="2">
+            <CollectionView ItemsSource="{Binding Departures}" 
+                SelectionMode="None" 
+                Grid.ColumnSpan="2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Departure">
                         <Grid Padding="10">
@@ -68,14 +72,14 @@
                                 <!-- Tappable card -->
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
-                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=GoToDepartureCommand}"
-                         CommandParameter="{Binding .}" />
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=GoToDepartureCommand}"
+                            CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <VerticalStackLayout Spacing="8">
                                     <HorizontalStackLayout Spacing="10">
                                         <Label Text="⏱" />
-                                        <Label Text="{Binding Time}"/>
+                                        <Label Text="{Binding Time}" />
                                         <Label Text="{Binding Destination}" />
                                         <Label Text="{Binding TrainType}" />
                                     </HorizontalStackLayout>
@@ -83,10 +87,10 @@
                                     <HorizontalStackLayout Spacing="10">
                                         <Label Text="🛤️" />
                                         <Label Text="{Binding Track}" />
-                                        <Button Text="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=SaveButtonText}"
-                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=UnsaveCommand}"
-                                 CommandParameter="{Binding .}"
-                                 HorizontalOptions="Start" />
+                                        <Button Text="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveButtonText}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="Blue"/>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
 

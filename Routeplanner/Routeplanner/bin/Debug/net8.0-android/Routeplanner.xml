@@ -13,9 +13,6 @@
             <inheritdoc/>
             <inheritdoc/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SaveButtonText">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel.saveButtonText"/>
-        </member>
         <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Station">
             <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._station"/>
         </member>
@@ -193,11 +190,11 @@
         <member name="P:Routeplanner.ViewModel.SavedViewModel.PageAppearingCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.PageAppearing"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.SavedViewModel.unsaveCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.UnsaveCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.clearCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.ClearCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.SavedViewModel.UnsaveCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.UnsaveAsync(Routeplanner.Model.Departure)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.ClearCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.Clear"/>.</summary>
         </member>
         <member name="F:Routeplanner.ViewModel.SavedViewModel.goToTripAsyncCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToTripAsyncCommand"/>.</summary>
@@ -337,9 +334,6 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveButtonText">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Station">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Station" generated properties.</summary>
         </member>
@@ -388,14 +382,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRouteCacheVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRouteCacheVisible" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveButtonText">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Station">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Station" generated properties.</summary>
@@ -444,6 +438,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRouteCacheVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRouteCacheVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveButtonText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveButtonText" generated properties.</summary>
         </member>
     </members>
 </doc>

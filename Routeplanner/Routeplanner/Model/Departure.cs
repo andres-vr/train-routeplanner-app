@@ -1,10 +1,11 @@
-﻿using SQLite;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using SQLite;
 using SQLiteNetExtensions.Attributes;
 
 namespace Routeplanner.Model
 {
     [Table("Departures")]
-    public class Departure
+    public class Departure : ObservableObject
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -17,6 +18,15 @@ namespace Routeplanner.Model
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<DepartureStop> Stops { get; set; } = new List<DepartureStop>();
+
+        private string _saveButtonText = "Save Departure";
+
+        [Ignore] 
+        public string SaveButtonText
+        {
+            get => _saveButtonText;
+            set => SetProperty(ref _saveButtonText, value);
+        }
     }
 
     [Table("DepartureStops")]

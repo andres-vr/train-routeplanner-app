@@ -15,9 +15,9 @@ namespace Routeplanner.ViewModel
         [ObservableProperty]
         private string saveButtonText = "Unsave Trip";
 
-        public ObservableCollection<Trip> _Trips { get; } = new();
+        public ObservableCollection<Trip> Trips { get; } = new();
 
-        public ObservableCollection<Departure> _Departures { get; } = new();
+        public ObservableCollection<Departure> Departures { get; } = new();
 
         public SavedViewModel(SavedTripsTable tripsTable, SavedDeparturesTable departuresTable)
         {
@@ -30,6 +30,7 @@ namespace Routeplanner.ViewModel
         {
             await Task.Run(GetTripsFromDB);
             await Task.Run(GetDeparturesFromDB);
+            Console.WriteLine("Er zijn zoveel trips:" + Trips.Count() + "en zoveel departures" + Departures.Count());
         }
 
         private async Task GetTripsFromDB()
@@ -37,7 +38,7 @@ namespace Routeplanner.ViewModel
             var trips = await _tripsTable.GetAllTrips();
             foreach (var trip in trips)
             {
-                _Trips.Add(trip);
+                Trips.Add(trip);
             }
         }
 
@@ -46,20 +47,7 @@ namespace Routeplanner.ViewModel
             var departures = await _departuresTable.GetAllDepartures();
             foreach (var departure in departures)
             {
-                _Departures.Add(departure);
-            }
-        }
-
-        [RelayCommand]
-        private async Task UnsaveAsync(Departure departure)
-        {
-            if (saveButtonText == "Unsave Departure")
-            {
-                MainThread.BeginInvokeOnMainThread(async () =>
-                {
-                    await _departuresTable.RemoveDepartureAsync(departure);
-                    _Departures.Remove(departure);
-                });
+                Departures.Add(departure);
             }
         }
 
@@ -71,6 +59,14 @@ namespace Routeplanner.ViewModel
                 _Trips.Remove(trip);
             });
         }*/
+        [RelayCommand]
+        private async void Clear()
+        {
+            Trips.Clear();
+            Departures.Clear();
+            _tripsTable.RemoveAllTrips();
+            _departuresTable.RemoveAllDepartures();
+        }
 
         [RelayCommand]
         private async void GoToTripAsync(Trip selectedItem)

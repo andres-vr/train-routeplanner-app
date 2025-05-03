@@ -47,7 +47,8 @@
             Text="Opties tonen" 
             Command="{Binding SearchCommand}"
             HorizontalOptions="Fill" />
-            <CollectionView ItemsSource="{Binding _Departures}"
+            <CollectionView x:Name="DepartureList"
+                ItemsSource="{Binding _Departures}"
                 SelectionMode="None"
                 Grid.ColumnSpan="2">
                 <CollectionView.ItemTemplate>
@@ -55,17 +56,16 @@
                         <Grid Padding="10">
                             <Border Style="{StaticResource CardView}" Padding="10">
 
-                                <!-- Tappable card -->
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=GoToDepartureCommand}"
+                            Command="{Binding Source={x:Reference DepartureList}, Path=BindingContext.GoToDepartureCommand}"
                             CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <VerticalStackLayout Spacing="8">
                                     <HorizontalStackLayout Spacing="10">
                                         <Label Text="⏱" />
-                                        <Label Text="{Binding Time}"/>
+                                        <Label Text="{Binding Time}" />
                                         <Label Text="{Binding Destination}" />
                                         <Label Text="{Binding TrainType}" />
                                     </HorizontalStackLayout>
@@ -74,11 +74,10 @@
                                         <Label Text="🛤️" />
                                         <Label Text="{Binding Track}" />
                                         <Button
-                                        Text="Save"
+                                        Text="{Binding SaveButtonText}"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveCommand}"
                                         CommandParameter="{Binding .}"
-                                        BackgroundColor="Blue">
-                                        </Button>
+                                        BackgroundColor="Blue"/>
                                     </HorizontalStackLayout>
                                 </VerticalStackLayout>
                             </Border>

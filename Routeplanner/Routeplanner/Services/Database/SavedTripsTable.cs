@@ -28,7 +28,15 @@ namespace Routeplanner.Services.Database
             await _dbService.InitAsync();
             await _dbService.Database.DeleteAsync(trip, true);
         }
-
+        public async Task RemoveAllTrips()
+        {
+            await _dbService.InitAsync();
+            var trips = await _dbService.Database.GetAllWithChildrenAsync<Trip>();
+            foreach (var trip in trips)
+            {
+                await _dbService.Database.DeleteAsync(trip, true);
+            }
+        }
         public async Task<List<Trip>> GetAllTrips()
         {
             await _dbService.InitAsync();

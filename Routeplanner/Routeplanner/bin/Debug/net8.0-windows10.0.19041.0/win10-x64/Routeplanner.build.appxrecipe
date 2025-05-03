@@ -55,23 +55,20 @@
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\MaterialIcons-Regular.ttf">
-      <PackagePath>MaterialIcons-Regular.ttf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png">
+      <PackagePath>heart.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\route.scale-100.png">
       <PackagePath>route.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\train.scale-100.png">
       <PackagePath>train.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png">
-      <PackagePath>heart.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.jpg">
       <PackagePath>appiconLargeTile.scale-400.jpg</PackagePath>

@@ -3,52 +3,27 @@
   "WorkspaceRootPath": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\departurespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\departurespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\savedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\savedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\savedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\savedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\plannerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\plannerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\departuresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\departuresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Common.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\plannerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\plannerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\savedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\savedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\departuresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\departuresviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\departurespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\departurespage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\departuredetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\departuredetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\departuredetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\departuredetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\departurespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\departurespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\saveddeparturestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,100 +34,12 @@
       "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\model\\departure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\tripdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\tripdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\savedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\savedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\resources\\raw\\aboutassets.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\resources\\raw\\aboutassets.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\tripdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\tripdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\localdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\localdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\stationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\stationtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\sqlitedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\sqlitedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\routecachetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\routecachetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\viewmodel\\departuredetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\viewmodel\\departuredetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\database\\savedtripstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\database\\savedtripstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\api\\tripsapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\api\\tripsapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\api\\departuresapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\api\\departuresapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\services\\api\\iapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\services\\api\\iapicallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\model\\apiparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\model\\apiparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\model\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\model\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\model\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\model\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\model\\trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\model\\trip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\tripdetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\tripdetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\departuredetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\departuredetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\view\\plannerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\view\\plannerpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|c:\\apps\\train-routeplanner-app\\routeplanner\\routeplanner\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99ED3B57-BF85-43D7-9027-E718EFC6A15C}|Routeplanner\\Routeplanner.csproj|solutionrelative:routeplanner\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,302 +49,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1112,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DeparturesPage.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\DeparturesPage.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\View\\DeparturesPage.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwAgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:43:10.983Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SavedPage.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\SavedPage.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\View\\SavedPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:39:43.332Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AboutAssets.txt",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Raw\\AboutAssets.txt",
-              "RelativeDocumentMoniker": "Routeplanner\\Resources\\Raw\\AboutAssets.txt",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Raw\\AboutAssets.txt",
-              "RelativeToolTip": "Routeplanner\\Resources\\Raw\\AboutAssets.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-30T08:11:05.021Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Styles.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Styles\\Styles.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\Resources\\Styles\\Styles.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Styles\\Styles.xaml",
-              "RelativeToolTip": "Routeplanner\\Resources\\Styles\\Styles.xaml",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAqwJYBAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-30T08:10:31.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Colors.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Styles\\Colors.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\Resources\\Styles\\Colors.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Resources\\Styles\\Colors.xaml",
-              "RelativeToolTip": "Routeplanner\\Resources\\Styles\\Colors.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-30T08:10:26.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\Constants.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\Constants.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\Constants.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\Constants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T07:09:13Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SqliteDatabaseService.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SqliteDatabaseService.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\SqliteDatabaseService.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SqliteDatabaseService.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\SqliteDatabaseService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T07:09:07.087Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "LocalDb.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\LocalDb.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\LocalDb.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\LocalDb.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\LocalDb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T07:05:33.394Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "SavedTripsTable.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedTripsTable.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\SavedTripsTable.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedTripsTable.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\SavedTripsTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:55:35.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SavedDeparturesTable.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAawBYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:55:34.009Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "TripsAPICallService.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\TripsAPICallService.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\API\\TripsAPICallService.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\TripsAPICallService.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\API\\TripsAPICallService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAACAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:55:11.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DeparturesAPICallService.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\DeparturesAPICallService.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\API\\DeparturesAPICallService.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\DeparturesAPICallService.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\API\\DeparturesAPICallService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:55:03.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "IAPICallService.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\IAPICallService.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\API\\IAPICallService.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\API\\IAPICallService.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\API\\IAPICallService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:55:02.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "APIParameters.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\APIParameters.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Model\\APIParameters.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\APIParameters.cs",
-              "RelativeToolTip": "Routeplanner\\Model\\APIParameters.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:54:52.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Station.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Station.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Model\\Station.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Station.cs",
-              "RelativeToolTip": "Routeplanner\\Model\\Station.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:54:35.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Route.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Route.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Model\\Route.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Route.cs",
-              "RelativeToolTip": "Routeplanner\\Model\\Route.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:54:15.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "RouteCacheTable.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\RouteCacheTable.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\RouteCacheTable.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\RouteCacheTable.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\RouteCacheTable.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:51:25.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "StationTable.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\StationTable.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\StationTable.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\StationTable.cs",
-              "RelativeToolTip": "Routeplanner\\Services\\Database\\StationTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:51:23.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\AppShell.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\AppShell.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\AppShell.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:15:14.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DeparturesPage.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\DeparturesPage.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml",
-              "RelativeToolTip": "Routeplanner\\View\\DeparturesPage.xaml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwE0AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T08:13:31.484Z",
+              "DocumentIndex": 3,
+              "Title": "Xamarin.Android.Common.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Common.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Common.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Common.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Common.targets",
+              "ViewState": "AgIAABYKAAAAAAAAAAAAwB0KAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-05-03T14:05:15.002Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Departure.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Departure.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Model\\Departure.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Departure.cs",
-              "RelativeToolTip": "Routeplanner\\Model\\Departure.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:49:54.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SavedViewModel.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\SavedViewModel.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\SavedViewModel.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\SavedViewModel.cs",
-              "RelativeToolTip": "Routeplanner\\ViewModel\\SavedViewModel.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:47:20.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\MauiProgram.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\MauiProgram.cs",
-              "RelativeToolTip": "Routeplanner\\MauiProgram.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAjwBcAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:48:21.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeparturesViewModel.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DeparturesViewModel.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\DeparturesViewModel.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DeparturesViewModel.cs",
-              "RelativeToolTip": "Routeplanner\\ViewModel\\DeparturesViewModel.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:23:16.895Z"
             },
             {
               "$type": "Document",
@@ -467,169 +80,114 @@
               "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\PlannerViewModel.cs",
               "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\PlannerViewModel.cs",
               "RelativeToolTip": "Routeplanner\\ViewModel\\PlannerViewModel.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEAAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAiwJUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:23:17.165Z"
+              "WhenOpened": "2025-05-03T14:04:19.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\App.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\App.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\App.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Departure.cs",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Departure.cs",
+              "RelativeDocumentMoniker": "Routeplanner\\Model\\Departure.cs",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Departure.cs",
+              "RelativeToolTip": "Routeplanner\\Model\\Departure.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvwcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:18:55.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\App.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\App.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\App.xaml",
-              "RelativeToolTip": "Routeplanner\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:18:48.286Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\AppShell.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\AppShell.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\AppShell.xaml",
-              "RelativeToolTip": "Routeplanner\\AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:18:47.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Trip.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Trip.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\Model\\Trip.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Model\\Trip.cs",
-              "RelativeToolTip": "Routeplanner\\Model\\Trip.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBEAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:14:05.397Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SavedPage.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\SavedPage.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml",
-              "RelativeToolTip": "Routeplanner\\View\\SavedPage.xaml",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAvwFcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:13:23.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "TripDetailsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\TripDetailsPage.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\TripDetailsPage.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\TripDetailsPage.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\View\\TripDetailsPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:11:40.496Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DepartureDetailsPage.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DepartureDetailsPage.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\DepartureDetailsPage.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DepartureDetailsPage.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\View\\DepartureDetailsPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:11:22.432Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TripDetailsPage.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\TripDetailsPage.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\TripDetailsPage.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\TripDetailsPage.xaml",
-              "RelativeToolTip": "Routeplanner\\View\\TripDetailsPage.xaml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:10:54.068Z"
+              "WhenOpened": "2025-05-03T13:41:16.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "DepartureDetailsPage.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DepartureDetailsPage.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\DepartureDetailsPage.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DepartureDetailsPage.xaml",
-              "RelativeToolTip": "Routeplanner\\View\\DepartureDetailsPage.xaml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAUwB0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:08:01.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "PlannerPage.xaml.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\PlannerPage.xaml.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\PlannerPage.xaml.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\PlannerPage.xaml.cs",
-              "RelativeToolTip": "Routeplanner\\View\\PlannerPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:07:29.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlannerPage.xaml",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\PlannerPage.xaml",
-              "RelativeDocumentMoniker": "Routeplanner\\View\\PlannerPage.xaml",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\PlannerPage.xaml",
-              "RelativeToolTip": "Routeplanner\\View\\PlannerPage.xaml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAvwKIAAACPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T07:06:38.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TripDetailsViewModel.cs",
-              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\TripDetailsViewModel.cs",
-              "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\TripDetailsViewModel.cs",
-              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\TripDetailsViewModel.cs",
-              "RelativeToolTip": "Routeplanner\\ViewModel\\TripDetailsViewModel.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAkwA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:06:16.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "DepartureDetailsViewModel.cs",
               "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DepartureDetailsViewModel.cs",
               "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\DepartureDetailsViewModel.cs",
               "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DepartureDetailsViewModel.cs",
               "RelativeToolTip": "Routeplanner\\ViewModel\\DepartureDetailsViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T07:06:12.313Z"
+              "WhenOpened": "2025-05-03T13:36:54.753Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DeparturesViewModel.cs",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DeparturesViewModel.cs",
+              "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\DeparturesViewModel.cs",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\DeparturesViewModel.cs",
+              "RelativeToolTip": "Routeplanner\\ViewModel\\DeparturesViewModel.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwGEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:32:25.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeparturesPage.xaml",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml",
+              "RelativeDocumentMoniker": "Routeplanner\\View\\DeparturesPage.xaml",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\DeparturesPage.xaml",
+              "RelativeToolTip": "Routeplanner\\View\\DeparturesPage.xaml",
+              "ViewState": "AgIAAEMAAAAAAAAAAADwv08AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-03T13:31:46.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SavedDeparturesTable.cs",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
+              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
+              "RelativeToolTip": "Routeplanner\\Services\\Database\\SavedDeparturesTable.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwBkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:26:29.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SavedTripsTable.cs",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedTripsTable.cs",
+              "RelativeDocumentMoniker": "Routeplanner\\Services\\Database\\SavedTripsTable.cs",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\Services\\Database\\SavedTripsTable.cs",
+              "RelativeToolTip": "Routeplanner\\Services\\Database\\SavedTripsTable.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:25:59.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SavedViewModel.cs",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\SavedViewModel.cs",
+              "RelativeDocumentMoniker": "Routeplanner\\ViewModel\\SavedViewModel.cs",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\ViewModel\\SavedViewModel.cs",
+              "RelativeToolTip": "Routeplanner\\ViewModel\\SavedViewModel.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAD4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:24:18.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SavedPage.xaml",
+              "DocumentMoniker": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml",
+              "RelativeDocumentMoniker": "Routeplanner\\View\\SavedPage.xaml",
+              "ToolTip": "C:\\Apps\\train-routeplanner-app\\Routeplanner\\Routeplanner\\View\\SavedPage.xaml",
+              "RelativeToolTip": "Routeplanner\\View\\SavedPage.xaml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAABEAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-23T07:13:23.713Z",
+              "EditorCaption": ""
             }
           ]
         },

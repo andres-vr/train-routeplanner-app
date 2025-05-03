@@ -21,8 +21,7 @@ namespace Routeplanner.ViewModel
 
         private List<string> _stationCache = new();
 
-        [ObservableProperty]
-        private string saveButtonText;
+        public Departure Model { get; }
 
         [ObservableProperty]
         private string _station;
@@ -88,14 +87,14 @@ namespace Routeplanner.ViewModel
         [RelayCommand]
         private async Task SaveAsync(Departure departure)
         {
-            if (SaveIconGlyph == "\ue158") // outlined
+            if (departure.SaveButtonText == "Save Departure")
             {
-                SaveIconGlyph = "\ue87d"; // filled heart
+                departure.SaveButtonText = "Unsave Departure";
                 await _savedDeparturesTable.SaveDepartureAsync(departure);
             }
             else
             {
-                SaveIconGlyph = "\ue158";
+                departure.SaveButtonText = "Save Departure";
                 await _savedDeparturesTable.RemoveDepartureAsync(departure);
             }
         }
