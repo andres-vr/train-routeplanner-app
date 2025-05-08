@@ -1,10 +1,4 @@
 ﻿using SQLite;
-using SQLiteNetExtensions.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Routeplanner.Model
 {
@@ -13,7 +7,7 @@ namespace Routeplanner.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-
+        
         public string StartStation { get; set; }
         public string EndStation { get; set; }
         public string Track { get; set; }
@@ -22,47 +16,17 @@ namespace Routeplanner.Model
         public TimeSpan Duration { get; set; }
         public int Connections { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<DateTimeEntry> StopList { get; set; } = new List<DateTimeEntry>();
-
         [Ignore]
-        public Dictionary<string, DateTime> DateTimeDictionary
+        public List<Stop> Stops { get; set; } = new List<Stop>();
+
+        public class Stop
         {
-            get => StopList?.ToDictionary(e => e.Key, e => e.Time) ?? new Dictionary<string, DateTime>();
-            set
-            {
-                if (StopList == null)
-                    StopList = new List<DateTimeEntry>();
-                else
-                    StopList.Clear();
+            public int Id { get; set; }
+            public int TripId { get; set; } // Foreign key to Trip
 
-                if (value != null)
-                {
-                    foreach (var pair in value)
-                    {
-                        StopList.Add(new DateTimeEntry
-                        {
-                            Key = pair.Key,
-                            Time = pair.Value
-                        });
-                    }
-                }
-            }
+            // Other Stop properties
+            public string Station { get; set; }
+            public DateTime Time { get; set; }
         }
-    }
-
-    // Class to store dictionary entries
-    [Table("DateTimeEntries")]
-    public class DateTimeEntry
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
-        [ForeignKey(typeof(Trip))]
-        public int MainClassId { get; set; }
-
-        public string Key { get; set; }
-
-        public DateTime Time { get; set; }
     }
 }

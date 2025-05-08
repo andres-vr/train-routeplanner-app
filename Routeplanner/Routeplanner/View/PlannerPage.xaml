@@ -127,7 +127,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <CollectionView ItemsSource="{Binding _Trips}"
+            <CollectionView ItemsSource="{Binding Trips}"
                  SelectionMode="None"
                  Grid.ColumnSpan="2">
                 <CollectionView.ItemTemplate>

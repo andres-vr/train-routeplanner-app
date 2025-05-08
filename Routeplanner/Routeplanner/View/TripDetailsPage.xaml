@@ -19,17 +19,17 @@
                     <Label Text="🔗" />
                     <Label Text="{Binding Trip.Connections}" />
 
-                    <CollectionView ItemsSource="{Binding Trip}"
+                    <CollectionView ItemsSource="{Binding Trip.Stops}"
                        SelectionMode="None"
                        Grid.ColumnSpan="2">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="model:DateTimeEntry">
+                            <DataTemplate x:DataType="model:Stop">
                                 <Grid Padding="10">
                                     <Border Style="{StaticResource CardView}" Padding="10">
                                         <!-- One-row horizontal layout -->
                                         <VerticalStackLayout Spacing="5">
                                             <HorizontalStackLayout Spacing="25">
-                                                <Label Text="{Binding Key}" FontAttributes="Bold" />
+                                                <Label Text="{Binding Station}" FontAttributes="Bold" />
                                                 <Label Text="{Binding Time}" FontAttributes="Bold" />
                                             </HorizontalStackLayout>
                                         </VerticalStackLayout>

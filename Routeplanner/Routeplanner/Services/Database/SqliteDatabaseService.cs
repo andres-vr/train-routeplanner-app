@@ -21,7 +21,6 @@ namespace Routeplanner.Services.Database
             await _database.CreateTableAsync<Trip>();
             await _database.CreateTableAsync<Departure>();
             await _database.CreateTableAsync<DepartureStop>();
-            await _database.CreateTableAsync<DateTimeEntry>();
         }
     }
 }

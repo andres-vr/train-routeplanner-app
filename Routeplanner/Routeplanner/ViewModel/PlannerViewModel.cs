@@ -19,7 +19,7 @@ using System.Text.Json;
 
             private readonly RouteCacheTable _routeCacheTable;
 
-            public List<Trip> _Trips { get; } = new();
+            public ObservableCollection<Trip> Trips { get; } = new ObservableCollection<Trip>();
 
             public List<Route> _RouteCache { get; } = new();
 
@@ -88,7 +88,9 @@ using System.Text.Json;
             private async Task CacheStationsAsync()
             {
                 var stations = await _stationTable.GetAllStations();
-                _stationCache = stations.Select(s => s.Name).ToList();
+                _stationCache = stations.Select(s => s.Name)
+                .Distinct()
+                .ToList();
             }
 
             private async Task GetRoutesFromCacheAsync()
@@ -205,14 +207,16 @@ using System.Text.Json;
                             JsonDocument apiResponse = JsonDocument.Parse(response);
 
                             List<Trip> trips = ExtractTripsFromApiResponse(apiResponse);
+                            Console.WriteLine(trips.Count());
 
                             MainThread.BeginInvokeOnMainThread(() =>
                             {
-                                 if (_Trips.Count != 0)
-                                 _Trips.Clear();
+                                if (Trips.Count != 0)
+                                Trips.Clear();
+
                                 foreach (var trip in trips)
                                 {
-                                   _Trips.Add(trip);
+                                   Trips.Add(trip);
                                 }
                             });
                         });
@@ -317,7 +321,7 @@ using System.Text.Json;
                         Track = track,
                         Duration = duration,
                         Connections = connections,
-                        StopList = new List<DateTimeEntry>()
+                        Stops = new List<Trip.Stop>()
                     };
                     Console.WriteLine("7");
                     // Process all stops for this trip at once
@@ -325,7 +329,7 @@ using System.Text.Json;
                     Console.WriteLine("8");
                     // Add the complete trip to our list
                     tripsList.Add(trip);
-                        Console.WriteLine($"Trip {i + 1} processed with {trip.StopList.Count} stops");
+                        Console.WriteLine($"Trip {i + 1} processed with {trip.Stops.Count} stops");
                     }
                 }
                 catch (Exception ex)
@@ -354,28 +358,28 @@ using System.Text.Json;
                         var stop = stops[k];
                         string stationName = stop.GetProperty("name").GetString();
 
-                        if (trip.DateTimeDictionary.ContainsKey(stationName))
+                        
+                        DateTime stopTime;
+                        if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
                         {
-                            Console.WriteLine($"Skipped duplicate stop: {stationName}");
+                            stopTime = DateTime.Parse(arrivalTimeElement.GetString());
                         }
-                        else {
-                            DateTime stopTime;
-                            if (stop.TryGetProperty("actualArrivalDateTime", out JsonElement arrivalTimeElement))
-                            {
-                                stopTime = DateTime.Parse(arrivalTimeElement.GetString());
-                            }
-                            else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
-                            {
-                                stopTime = DateTime.Parse(departureTimeElement.GetString());
-                            }
-                            else
-                            {
-                                continue;
-                            }
+                        else if (stop.TryGetProperty("actualDepartureDateTime", out JsonElement departureTimeElement))
+                        {
+                            stopTime = DateTime.Parse(departureTimeElement.GetString());
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                        Trip.Stop stopItem = new Trip.Stop
+                        {
+                            Station = stationName,
+                            Time = stopTime
+                        };
 
-                            trip.DateTimeDictionary[stationName] = stopTime;
-                            Console.WriteLine($"Added stop: {stationName}");
-                        }
+                        trip.Stops.Add(stopItem);
+                        Console.WriteLine($"Added stop: {stationName}");
                     }
                 }
             }

@@ -31,8 +31,8 @@ namespace Routeplanner
             builder.Services.AddSingleton<SavedPage>();
 
             // Models 
-            builder.Services.AddSingleton<Trip>();
-            builder.Services.AddSingleton<Departure>();
+            builder.Services.AddTransient<Trip>();
+            builder.Services.AddTransient<Departure>();
 
             // ViewModels
             builder.Services.AddSingleton<PlannerViewModel>();

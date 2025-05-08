@@ -39,10 +39,17 @@ namespace Routeplanner.Services.Database
         public async Task<List<Route>> GetLast5Routes()
         {
             await _dbService.InitAsync();
-            return await _dbService.Database.Table<Route>()
-                 .OrderByDescending(r => r.Id)
+            var allRoutes = await _dbService.Database.Table<Route>()
+            .OrderByDescending(r => r.Id)
+            .ToListAsync();
+
+            var distinctRoutes = allRoutes
+                .GroupBy(r => new { r.FromStation, r.ToStation }) 
+                .Select(g => g.First())                         
                 .Take(5)
-                .ToListAsync();
+                .ToList();
+
+            return distinctRoutes;
         }
     }
 }
