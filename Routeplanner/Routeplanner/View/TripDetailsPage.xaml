@@ -12,27 +12,36 @@
         Spacing="25">
             <ScrollView>
                 <StackLayout Padding="20">
-                    <Label Text="{Binding Trip.StartTime}" FontSize="24" FontAttributes="Bold"/>
-                    <Label Text="{Binding Trip.EndTime}" FontSize="16"/>
-                    <Label Text="⏱" />
-                    <Label Text="{Binding Trip.Duration}" />
-                    <Label Text="🔗" />
-                    <Label Text="{Binding Trip.Connections}" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Trip.StartStation}" FontSize="24" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Trip.EndStation}" FontSize="24"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Trip.StartTime}" />
+                        <Label Text="{Binding Trip.EndTime}" />
+                        <Label Text="⏱" />
+                        <Label Text="{Binding Trip.Duration}" />
+                    </HorizontalStackLayout>
 
-                    <CollectionView ItemsSource="{Binding Trip.Stops}"
-                       SelectionMode="None"
-                       Grid.ColumnSpan="2">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="­🛤️" />
+                        <Label Text="{Binding Trip.Track}" />
+                        <Label Text="­🔗"/>
+                        <Label Text="{Binding Trip.Connections}" />
+                    </HorizontalStackLayout>
+
+                    <CollectionView ItemsSource="{Binding Trip.Stops}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="model:Stop">
-                                <Grid Padding="10">
+                                <Grid Padding="2">
                                     <Border Style="{StaticResource CardView}" Padding="10">
-                                        <!-- One-row horizontal layout -->
-                                        <VerticalStackLayout Spacing="5">
-                                            <HorizontalStackLayout Spacing="25">
-                                                <Label Text="{Binding Station}" FontAttributes="Bold" />
-                                                <Label Text="{Binding Time}" FontAttributes="Bold" />
-                                            </HorizontalStackLayout>
-                                        </VerticalStackLayout>
+                                        <HorizontalStackLayout>
+                                            <Label Text="{Binding Time, StringFormat='{0:HH:mm}'}"/>
+                                            <Label Text=" "/>
+                                            <Label Text="{Binding Station}" />
+                                        </HorizontalStackLayout>
                                     </Border>
                                 </Grid>
                             </DataTemplate>

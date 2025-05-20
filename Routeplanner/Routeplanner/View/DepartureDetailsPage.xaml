@@ -5,7 +5,8 @@
              xmlns:model="clr-namespace:Routeplanner.Model"
              xmlns:viewmodel="clr-namespace:Routeplanner.ViewModel"
              x:Class="Routeplanner.DepartureDetailsPage"
-             x:DataType="viewmodel:DepartureDetailsViewModel">
+             x:DataType="viewmodel:DepartureDetailsViewModel"
+             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps">
     <ScrollView>
         <VerticalStackLayout
         Padding="30,0"
@@ -20,7 +21,7 @@
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout Spacing="10">
-                        <Label Text="🛤️" />
+                        <Label Text="­🛤️" />
                         <Label Text="{Binding Departure.Track}" />
                     </HorizontalStackLayout>
 
@@ -40,6 +41,7 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    <!--<maps:Map x:Name="DepartureMap" />-->
                 </StackLayout>
             </ScrollView>
         </VerticalStackLayout>

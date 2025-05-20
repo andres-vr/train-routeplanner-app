@@ -13,11 +13,15 @@
         <VerticalStackLayout
         Padding="30,0"
         Spacing="25">
+            <Label Text="" FontSize="3"/>
             <Button
                 Text="Clear Saved Data"
                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=ClearCommand}"
                 CommandParameter="{Binding .}"
                 />
+            <Label Text="Saved Trips"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"/>
             <CollectionView ItemsSource="{Binding Trips}"
               SelectionMode="None"
               Grid.ColumnSpan="2">
@@ -27,40 +31,45 @@
                             <Border Style="{StaticResource CardView}" Padding="10">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=GoToTripCommand}"
+                                   Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=GoToTripCommand}"
                                     CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <!-- One-row horizontal layout -->
-                                <VerticalStackLayout Spacing="5">
-                                    <HorizontalStackLayout Spacing="25">
-                                        <HorizontalStackLayout>
-                                            <Label Text="{Binding StartTime}" FontAttributes="Bold" />
-                                            <Label Text=" ➝ " />
-                                            <Label Text="{Binding EndTime}" FontAttributes="Bold" />
-                                        </HorizontalStackLayout>
+                                <VerticalStackLayout Spacing="8">
+                                    <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto,Auto">
+                                        <!-- StartTime Ô×Ø EndTime -->
+                                        <Label Text="{Binding StartTime}" FontAttributes="Bold" Grid.Column="0" />
+                                        <Label Text="➝" Grid.Column="1" />
+                                        <Label Text="{Binding EndTime}" FontAttributes="Bold" Grid.Column="2" />
 
-                                        <HorizontalStackLayout>
-                                            <Label Text="⏱" />
-                                            <Label Text="{Binding Duration}" />
-                                        </HorizontalStackLayout>
-
-                                        <HorizontalStackLayout>
-                                            <Label Text="🔗" />
-                                            <Label Text="{Binding Connections}" />
-                                        </HorizontalStackLayout>
-
-                                        <Button Text="Save Departure"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
-                                        CommandParameter="{Binding .}"/>    
-                                    </HorizontalStackLayout>
+                                        <!-- Duration -->
+                                        <Label Text="⏱" Grid.Column="4" />
+                                        <Label Text="{Binding Duration}" Grid.Column="5" />
+                                    </Grid>
+                                    <Grid ColumnDefinitions="Auto,Auto, 50 ,Auto,Auto,*,Auto">
+                                        <Label Text="­🔗"  Grid.Column="0"/>
+                                        <Label Text="{Binding Connections}"  Grid.Column="1"/>
+                                        <Label Text="­🛤️" Grid.Column="3" />
+                                        <Label Text="{Binding Track}" Grid.Column="4" />
+                                        <Button 
+                                          Text="Unsave Trip"
+                                          VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=UnsaveTripCommand}"
+                                          CommandParameter="{Binding .}" 
+                                          BackgroundColor="ForestGreen"
+                                          Grid.Column="6"/>
+                                    </Grid>
                                 </VerticalStackLayout>
                             </Border>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
+            <Label Text="Saved Departures"
+           FontSize="16"
+           HorizontalTextAlignment="Center"/>
             <CollectionView ItemsSource="{Binding Departures}" 
                 SelectionMode="None" 
                 Grid.ColumnSpan="2">
@@ -72,28 +81,30 @@
                                 <!-- Tappable card -->
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=GoToDepartureCommand}"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=GoToDepartureCommand}"
                             CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <VerticalStackLayout Spacing="8">
-                                    <HorizontalStackLayout Spacing="10">
-                                        <Label Text="⏱" />
-                                        <Label Text="{Binding Time}" />
-                                        <Label Text="{Binding Destination}" />
-                                        <Label Text="{Binding TrainType}" />
-                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="Auto,Auto, *, Auto, *, Auto">
+                                        <Label Text="⏱" Grid.Column="0"/>
+                                        <Label Text="{Binding Time}" Grid.Column="1" />
+                                        <Label Text="{Binding Destination}" Grid.Column="3"/>
+                                        <Label Text="{Binding TrainType}" Grid.Column="5" />
+                                    </Grid>
 
-                                    <HorizontalStackLayout Spacing="10">
-                                        <Label Text="🛤️" />
-                                        <Label Text="{Binding Track}" />
-                                        <Button Text="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveButtonText}"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveCommand}"
-                                    CommandParameter="{Binding .}"
-                                    BackgroundColor="Blue"/>
-                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="Auto,Auto, *, Auto">
+                                        <Label Text="­🛤️" Grid.Column="0" />
+                                        <Label Text="{Binding Track}" Grid.Column="1" />
+                                        <Button
+                                        Text="Unsave Departure"
+                                        TextColor="White"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SavedViewModel}}, Path=UnsaveDepartureCommand}"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="Blue"
+                                        Grid.Column="3"/>
+                                    </Grid>
                                 </VerticalStackLayout>
-
                             </Border>
                         </Grid>
                     </DataTemplate>

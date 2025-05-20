@@ -1,5 +1,6 @@
 ﻿using Routeplanner.Model;
 using Routeplanner.Services.Database;
+using System.Xml.Linq;
 
 namespace Routeplanner.Services
 {
@@ -10,6 +11,7 @@ namespace Routeplanner.Services
         public StationTable(SQLiteDatabaseService dbService)
         {
             _dbService = dbService;
+            SeedStationsAsync();
         }
 
         public async Task<List<Station>> GetAllStations()
@@ -35,6 +37,22 @@ namespace Routeplanner.Services
                                           .Where(s => s.Name == Name)
                                           .FirstOrDefaultAsync();
             return station?.Code;
+        }
+
+        public async Task<string> NamesToCodes(string[] names)
+        {
+            await _dbService.InitAsync();
+            var codes = new List<string>();
+            foreach (var Name in names)
+            {
+                var station = await _dbService.Database
+                                              .Table<Station>()
+                                              .Where(s => s.Name == Name)
+                                              .FirstOrDefaultAsync();
+                codes.Add(station?.Code);
+            }
+            string codesString = string.Join(",", codes);
+            return codesString;
         }
 
         public async Task SeedStationsAsync()
@@ -179,7 +197,7 @@ namespace Routeplanner.Services
                 new Station { Name = "Etten-Leur", Code = "Etn" },
                 new Station { Name = "Eygelshoven Markt", Code = "Eghm" },
                 new Station { Name = "Eygelshoven", Code = "Egh" },
-                new Station { Name = "Feanwâlden", Code = "Fwd" },
+                new Station { Name = "Feanw├ólden", Code = "Fwd" },
                 new Station { Name = "Franeker", Code = "Fn" },
                 new Station { Name = "Gaanderen", Code = "Gdr" },
                 new Station { Name = "Geldermalsen", Code = "Gdm" },
@@ -281,7 +299,7 @@ namespace Routeplanner.Services
                 new Station { Name = "Maastricht", Code = "Mt" },
                 new Station { Name = "Maastricht Randwyck", Code = "Mtr" },
                 new Station { Name = "Mantgum", Code = "Mg" },
-                new Station { Name = "Mariënberg", Code = "Mrb" },
+                new Station { Name = "Mari├½nberg", Code = "Mrb" },
                 new Station { Name = "Martenshoek", Code = "Mth" },
                 new Station { Name = "Meerssen", Code = "Mes" },
                 new Station { Name = "Meppel", Code = "Mp" },

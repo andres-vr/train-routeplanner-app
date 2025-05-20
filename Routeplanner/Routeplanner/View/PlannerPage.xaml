@@ -13,11 +13,10 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-
-
+            <Label Text="" FontSize="3"/>
             <Entry 
                 Placeholder="Startpunt"
-                Text="{Binding StartPoint, Mode=TwoWay}"
+                Text="{Binding Origin, Mode=TwoWay}"
                 ClearButtonVisibility="WhileEditing">
                 <Entry.Behaviors>
                     <toolkit:EventToCommandBehavior 
@@ -25,25 +24,26 @@
                         Command="{Binding CompletedCommand}"/>
                 </Entry.Behaviors>
             </Entry>
-            <VerticalStackLayout IsVisible="{Binding IsStartPointSuggestionsVisible}"
+            <VerticalStackLayout IsVisible="{Binding IsOriginSuggestionsVisible}"
                          BackgroundColor="White"
                          Padding="5"
                          Spacing="2"
-                         BindableLayout.ItemsSource="{Binding StartPointSuggestions}">
+                         BindableLayout.ItemsSource="{Binding OriginSuggestions}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Label Text="{Binding}"
                        Padding="10"
                        BackgroundColor="LightGray">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SelectStartPointCommand}"
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SelectOriginCommand}"
                                               CommandParameter="{Binding .}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
-
+            <Button Text="⇄"
+                    Command="{Binding SwitchCommand}"/>
             <Entry 
                 Placeholder="Bestemming"
                 Text="{Binding Destination, Mode=TwoWay}"
@@ -99,7 +99,7 @@
             <CollectionView ItemsSource="{Binding _RouteCache}"
             SelectionMode="None"
             Grid.ColumnSpan="2"
-            IsVisible="{Binding IsRouteCacheVisible}">   
+            IsVisible="{Binding IsRouteCacheVisible}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Route">
                         <Grid Padding="10">
@@ -107,7 +107,7 @@
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SelectRouteCommand}"
-                                    CommandParameter="{Binding .}" />   
+                                    CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
                                 <!-- One-row horizontal layout -->
@@ -115,7 +115,7 @@
                                     <HorizontalStackLayout Spacing="25">
                                         <VerticalStackLayout>
                                             <Label Text="{Binding FromStation}" FontAttributes="Bold" />
-                                            <Label Text=" ➝ " />
+                                            <Label Text="➝" />
                                             <Label Text="{Binding ToStation}" FontAttributes="Bold" />
                                         </VerticalStackLayout>
 
@@ -140,39 +140,47 @@
                                     CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
 
-                                <!-- One-row horizontal layout -->
-                                <VerticalStackLayout Spacing="5">
-                                    <HorizontalStackLayout Spacing="25">
-                                        <HorizontalStackLayout>
-                                            <Label Text="{Binding StartTime}" FontAttributes="Bold" />
-                                            <Label Text=" ➝ " />
-                                            <Label Text="{Binding EndTime}" FontAttributes="Bold" />
-                                        </HorizontalStackLayout>
+                                <!-- 2-row horizontal layout -->
+                                <VerticalStackLayout Spacing="8">
+                                    <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto,Auto">
+                                        <!-- StartTime Ô×Ø EndTime -->
+                                        <Label Text="{Binding StartTime}" FontAttributes="Bold" Grid.Column="0" />
+                                        <Label Text="➝" Grid.Column="1" />
+                                        <Label Text="{Binding EndTime}" FontAttributes="Bold" Grid.Column="2" />
 
-                                        <HorizontalStackLayout>
-                                            <Label Text="⏱" />
-                                            <Label Text="{Binding Duration}" />
-                                        </HorizontalStackLayout>
-
-                                        <HorizontalStackLayout>
-                                            <Label Text="🔗" />
-                                            <Label Text="{Binding Connections}" />
-                                        </HorizontalStackLayout>
-                                        <HorizontalStackLayout>
-                                            <Button 
-                                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveButtonText}"
-                                                VerticalOptions="Center"
-                                                HorizontalOptions="Center"
-                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
-                                                CommandParameter="{Binding .}" />
-                                        </HorizontalStackLayout>
-                                    </HorizontalStackLayout>
+                                        <!-- Duration -->
+                                        <Label Text="⏱" Grid.Column="4" />
+                                        <Label Text="{Binding Duration}" Grid.Column="5" />
+                                    </Grid>
+                                    <Grid ColumnDefinitions="Auto,Auto, 50 ,Auto,Auto,*,Auto">
+                                        <Label Text="­🔗"  Grid.Column="0"/>
+                                        <Label Text="{Binding Connections}"  Grid.Column="1"/>
+                                        <Label Text="­🛤️" Grid.Column="3" />
+                                        <Label Text="{Binding Track}" Grid.Column="4" />
+                                        <Button 
+                                         Text="{Binding SaveButtonText}"
+                                         VerticalOptions="Center"
+                                         HorizontalOptions="Center"
+                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PlannerViewModel}}, Path=SaveCommand}"
+                                         CommandParameter="{Binding .}" 
+                                         BackgroundColor="ForestGreen"
+                                         Grid.Column="6"/>
+                                    </Grid>
                                 </VerticalStackLayout>
                             </Border>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <ActivityIndicator 
+             x:Name="LoadingSpinner" 
+             IsRunning="True" 
+             IsVisible="{Binding Loading}"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Color="Green"
+             WidthRequest="50"
+             HeightRequest="50"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

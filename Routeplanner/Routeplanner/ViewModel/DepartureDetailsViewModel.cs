@@ -1,14 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.Maui.ApplicationModel;
 using Routeplanner.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Routeplanner.ViewModel
 {
-    public class DepartureDetailsViewModel : ObservableObject
+    public partial class DepartureDetailsViewModel : ObservableObject
     {
         private Departure _departure;
 
@@ -22,7 +24,5 @@ namespace Routeplanner.ViewModel
         {
             Departure = departure;
         }
-
-
     }
 }

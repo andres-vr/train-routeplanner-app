@@ -23,6 +23,7 @@ namespace Routeplanner
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            //.UseMauiMaps();
             builder.UseMauiCommunityToolkit();
 
             // Pages
@@ -44,6 +45,7 @@ namespace Routeplanner
             // Services
             builder.Services.AddSingleton<ITripService, TripService>();
             builder.Services.AddSingleton<IDepartureService, DepartureService>();
+            builder.Services.AddTransient<MapAPICalLService>();
 
             // Database / Tables
             builder.Services.AddSingleton<SQLiteDatabaseService>();

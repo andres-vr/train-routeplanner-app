@@ -13,7 +13,7 @@
         <VerticalStackLayout
         Padding="30,0"
         Spacing="25">
-
+            <Label Text="" FontSize="3"/>
             <Entry 
             Placeholder="Geef een station in"
             Text="{Binding Station, Mode=TwoWay}"
@@ -43,7 +43,7 @@
                 </BindableLayout.ItemTemplate>
             </VerticalStackLayout>
             <Button
-            x:Name="searchBtn"
+            
             Text="Opties tonen" 
             Command="{Binding SearchCommand}"
             HorizontalOptions="Fill" />
@@ -63,28 +63,39 @@
                                 </Border.GestureRecognizers>
 
                                 <VerticalStackLayout Spacing="8">
-                                    <HorizontalStackLayout Spacing="10">
-                                        <Label Text="⏱" />
-                                        <Label Text="{Binding Time}" />
-                                        <Label Text="{Binding Destination}" />
-                                        <Label Text="{Binding TrainType}" />
-                                    </HorizontalStackLayout>
+                                    <Grid ColumnDefinitions="Auto,Auto, *, Auto, *, Auto">
+                                        <Label Text="⏱" Grid.Column="0"/>
+                                        <Label Text="{Binding Time}" Grid.Column="1" />
+                                        <Label Text="{Binding Destination}" Grid.Column="3"/>
+                                        <Label Text="{Binding TrainType}" Grid.Column="5" />
+                                    </Grid>
 
-                                    <HorizontalStackLayout Spacing="10">
-                                        <Label Text="🛤️" />
-                                        <Label Text="{Binding Track}" />
+                                    <Grid ColumnDefinitions="Auto,Auto, *, Auto">
+                                        <Label Text="🛤️" Grid.Column="0" />
+                                        <Label Text="{Binding Track}" Grid.Column="1" />
                                         <Button
                                         Text="{Binding SaveButtonText}"
+                                        TextColor="White"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:DeparturesViewModel}}, Path=SaveCommand}"
                                         CommandParameter="{Binding .}"
-                                        BackgroundColor="Blue"/>
-                                    </HorizontalStackLayout>
+                                        BackgroundColor="Blue"
+                                        Grid.Column="3"/>
+                                    </Grid>
                                 </VerticalStackLayout>
                             </Border>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <ActivityIndicator 
+            x:Name="LoadingSpinner" 
+            IsRunning="True" 
+            IsVisible="{Binding Loading}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Color="Blue"
+            WidthRequest="50"
+            HeightRequest="50"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

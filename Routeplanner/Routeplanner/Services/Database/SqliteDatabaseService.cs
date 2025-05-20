@@ -16,6 +16,8 @@ namespace Routeplanner.Services.Database
 
         public async Task InitAsync()
         {
+
+
             await _database.CreateTableAsync<Station>();
             await _database.CreateTableAsync<Route>();
             await _database.CreateTableAsync<Trip>();

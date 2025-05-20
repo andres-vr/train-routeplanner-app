@@ -1,13 +1,14 @@
-﻿using SQLite;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using SQLite;
 
 namespace Routeplanner.Model
 {
     [Table("Trips")]
-    public class Trip
+    public class Trip : ObservableObject
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        
+
         public string StartStation { get; set; }
         public string EndStation { get; set; }
         public string Track { get; set; }
@@ -17,16 +18,15 @@ namespace Routeplanner.Model
         public int Connections { get; set; }
 
         [Ignore]
-        public List<Stop> Stops { get; set; } = new List<Stop>();
+        public List<Stop> Stops { get; set; } = new();
 
-        public class Stop
+        private string _saveButtonText = "Save Trip";
+
+        [Ignore]
+        public string SaveButtonText
         {
-            public int Id { get; set; }
-            public int TripId { get; set; } // Foreign key to Trip
-
-            // Other Stop properties
-            public string Station { get; set; }
-            public DateTime Time { get; set; }
+            get => _saveButtonText;
+            set => SetProperty(ref _saveButtonText, value);
         }
     }
 }

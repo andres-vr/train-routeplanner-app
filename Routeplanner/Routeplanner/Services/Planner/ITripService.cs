@@ -9,5 +9,11 @@ namespace Routeplanner.Services.Planner
         Task<List<Trip>> GetTrips();
 
         Task<string> FetchTripsAsync(APIParameters parameters);
+
+        Task<string> FetchMapDataAsync(string codes);
+
+        List<Trip> ExtractTripsFromApiResponse(JsonDocument responseData);
+
+        void ProcessAllStopsForTrip(JsonElement tripData, Trip trip);
     }
 }

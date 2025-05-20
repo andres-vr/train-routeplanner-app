@@ -22,8 +22,8 @@
         <member name="P:Routeplanner.ViewModel.DeparturesViewModel.IsStationSuggestionsVisible">
             <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._isStationSuggestionsVisible"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.SaveIconGlyph">
-            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel.saveIconGlyph"/>
+        <member name="P:Routeplanner.ViewModel.DeparturesViewModel.Loading">
+            <inheritdoc cref="F:Routeplanner.ViewModel.DeparturesViewModel._loading"/>
         </member>
         <member name="M:Routeplanner.ViewModel.DeparturesViewModel.OnStationChanged(System.String)">
             <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.DeparturesViewModel.Station"/> just changed.</summary>
@@ -76,9 +76,10 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._startPoint"/>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.Origin">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._origin"/>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.Destination">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._destination"/>
@@ -98,14 +99,14 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectedType">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._selectedType"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlannerViewModel.StartPointSuggestions">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._startPointSuggestions"/>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.OriginSuggestions">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._originSuggestions"/>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.DestinationSuggestions">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._destinationSuggestions"/>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsStartPointSuggestionsVisible">
-            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isStartPointSuggestionsVisible"/>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsOriginSuggestionsVisible">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isOriginSuggestionsVisible"/>
         </member>
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.IsDestinationSuggestionsVisible">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._isDestinationSuggestionsVisible"/>
@@ -116,10 +117,13 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SaveButtonText">
             <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel.saveButtonText"/>
         </member>
-        <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnStartPointChanged(System.String)">
-            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint"/> just changed.</summary>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.Loading">
+            <inheritdoc cref="F:Routeplanner.ViewModel.PlannerViewModel._loading"/>
+        </member>
+        <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnOriginChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.Origin"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
-            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlannerViewModel.StartPoint"/> is changed.</remarks>
+            <remarks>This method is invoked right after the value of <see cref="P:Routeplanner.ViewModel.PlannerViewModel.Origin"/> is changed.</remarks>
         </member>
         <member name="M:Routeplanner.ViewModel.PlannerViewModel.OnDestinationChanged(System.String)">
             <summary>Executes the logic for when <see cref="P:Routeplanner.ViewModel.PlannerViewModel.Destination"/> just changed.</summary>
@@ -138,11 +142,11 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.CompletedCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Completed"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectStartPointCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectStartPointCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectOriginCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectOriginCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectStartPointCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectStartPoint(System.String)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SelectOriginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SelectOrigin(System.String)"/>.</summary>
         </member>
         <member name="F:Routeplanner.ViewModel.PlannerViewModel.selectDestinationCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SelectDestinationCommand"/>.</summary>
@@ -174,15 +178,19 @@
         <member name="P:Routeplanner.ViewModel.PlannerViewModel.SaveCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.SaveAsync(Routeplanner.Model.Trip)"/>.</summary>
         </member>
+        <member name="F:Routeplanner.ViewModel.PlannerViewModel.switchCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.PlannerViewModel.SwitchCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.PlannerViewModel.SwitchCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.PlannerViewModel.Switch"/>.</summary>
+        </member>
         <member name="T:Routeplanner.ViewModel.SavedViewModel">
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
-        </member>
-        <member name="P:Routeplanner.ViewModel.SavedViewModel.SaveButtonText">
-            <inheritdoc cref="F:Routeplanner.ViewModel.SavedViewModel.saveButtonText"/>
+            <inheritdoc/>
         </member>
         <member name="F:Routeplanner.ViewModel.SavedViewModel.pageAppearingCommand">
             <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.PageAppearingCommand"/>.</summary>
@@ -196,17 +204,29 @@
         <member name="P:Routeplanner.ViewModel.SavedViewModel.ClearCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.Clear"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToTripAsyncCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToTripAsyncCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToTripCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToTripCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToTripAsyncCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToTripAsync(Routeplanner.Model.Trip)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToTripCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToTripAsync(Routeplanner.Model.Trip)"/>.</summary>
         </member>
-        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToDepartureAsyncCommand">
-            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureAsyncCommand"/>.</summary>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.goToDepartureCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureCommand"/>.</summary>
         </member>
-        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureAsyncCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToDepartureAsync(Routeplanner.Model.Departure)"/>.</summary>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.GoToDepartureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.GoToDepartureAsync(Routeplanner.Model.Departure)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.unsaveTripCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.UnsaveTripCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.UnsaveTripCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.UnsaveTripAsync(Routeplanner.Model.Trip)"/>.</summary>
+        </member>
+        <member name="F:Routeplanner.ViewModel.SavedViewModel.unsaveDepartureCommand">
+            <summary>The backing field for <see cref="P:Routeplanner.ViewModel.SavedViewModel.UnsaveDepartureCommand"/>.</summary>
+        </member>
+        <member name="P:Routeplanner.ViewModel.SavedViewModel.UnsaveDepartureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Routeplanner.ViewModel.SavedViewModel.UnsaveDepartureAsync(Routeplanner.Model.Departure)"/>.</summary>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
             <summary>
@@ -343,11 +363,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStationSuggestionsVisible" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveIconGlyph">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveIconGlyph" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Loading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Loading" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartPoint">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartPoint" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Origin">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Origin" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Destination">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Destination" generated properties.</summary>
@@ -367,14 +387,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedType">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedType" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartPointSuggestions">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartPointSuggestions" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OriginSuggestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OriginSuggestions" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DestinationSuggestions">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DestinationSuggestions" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStartPointSuggestionsVisible">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStartPointSuggestionsVisible" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsOriginSuggestionsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsOriginSuggestionsVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDestinationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDestinationSuggestionsVisible" generated properties.</summary>
@@ -400,11 +420,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStationSuggestionsVisible" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveIconGlyph">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveIconGlyph" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Loading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Loading" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartPoint">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartPoint" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Origin">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Origin" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Destination">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Destination" generated properties.</summary>
@@ -424,14 +444,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedType">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedType" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartPointSuggestions">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartPointSuggestions" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OriginSuggestions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OriginSuggestions" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DestinationSuggestions">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DestinationSuggestions" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStartPointSuggestionsVisible">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStartPointSuggestionsVisible" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsOriginSuggestionsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsOriginSuggestionsVisible" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDestinationSuggestionsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDestinationSuggestionsVisible" generated properties.</summary>

@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using Routeplanner.Model;
 using Routeplanner.Services.Database;
 using System.Collections.ObjectModel;
-using Routeplanner.ViewModel;
 
 namespace Routeplanner.ViewModel
 {
@@ -11,9 +10,6 @@ namespace Routeplanner.ViewModel
     {
         private readonly SavedTripsTable _tripsTable;
         private readonly SavedDeparturesTable _departuresTable;
-
-        [ObservableProperty]
-        private string saveButtonText = "Unsave Trip";
 
         public ObservableCollection<Trip> Trips { get; } = new();
 
@@ -28,9 +24,14 @@ namespace Routeplanner.ViewModel
         [RelayCommand]
         private async Task PageAppearing()
         {
-            await Task.Run(GetTripsFromDB);
-            await Task.Run(GetDeparturesFromDB);
-            Console.WriteLine("Er zijn zoveel trips:" + Trips.Count() + "en zoveel departures" + Departures.Count());
+            if (Trips.Count == 0)
+            {
+                await Task.Run(GetTripsFromDB);
+            }
+            if (Departures.Count == 0)
+            {
+                await Task.Run(GetDeparturesFromDB);
+            }
         }
 
         private async Task GetTripsFromDB()
@@ -51,14 +52,6 @@ namespace Routeplanner.ViewModel
             }
         }
 
-        /*private async Task RemoveTripFromDB(Trip trip)
-        {
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                await _tripsTable.RemoveTripAsync(trip);
-                _Trips.Remove(trip);
-            });
-        }*/
         [RelayCommand]
         private async void Clear()
         {
@@ -69,7 +62,7 @@ namespace Routeplanner.ViewModel
         }
 
         [RelayCommand]
-        private async void GoToTripAsync(Trip selectedItem)
+        private async Task GoToTripAsync(Trip selectedItem)
         {
             if (selectedItem == null) return;
 
@@ -83,7 +76,7 @@ namespace Routeplanner.ViewModel
         }
 
         [RelayCommand]
-        private async void GoToDepartureAsync(Departure selectedItem)
+        private async Task GoToDepartureAsync(Departure selectedItem)
         {
             if (selectedItem == null) return;
 
@@ -94,6 +87,26 @@ namespace Routeplanner.ViewModel
             };
 
             await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+
+        [RelayCommand]
+        private async Task UnsaveTripAsync(Trip trip)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await _tripsTable.RemoveTripAsync(trip);
+                Trips.Remove(trip);
+            });
+        }
+
+        [RelayCommand]
+        private async Task UnsaveDepartureAsync(Departure departure)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await _departuresTable.RemoveDepartureAsync(departure);
+                Departures.Remove(departure);
+            });
         }
     }
 }

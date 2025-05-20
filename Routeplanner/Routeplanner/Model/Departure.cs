@@ -15,13 +15,14 @@ namespace Routeplanner.Model
         public string Destination { get; set; }
         public string TrainType { get; set; }
         public string Track { get; set; }
+        public double[][] coords;
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<DepartureStop> Stops { get; set; } = new List<DepartureStop>();
 
         private string _saveButtonText = "Save Departure";
 
-        [Ignore] 
+        [Ignore]
         public string SaveButtonText
         {
             get => _saveButtonText;

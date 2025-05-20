@@ -33,15 +33,13 @@ namespace Routeplanner.ViewModel
         private bool _isStationSuggestionsVisible;
 
         [ObservableProperty]
-        private string saveIconGlyph = "\ue158";
+        public bool _loading;
 
         public DeparturesViewModel(IDepartureService departureService, StationTable stationTable, SavedDeparturesTable savedDepartureTable)
         {
             _departureService = departureService;
             _stationTable = stationTable;
             _savedDeparturesTable = savedDepartureTable;
-
-            Task.Run(CacheStationsAsync);
         }
 
         [RelayCommand]
@@ -101,7 +99,6 @@ namespace Routeplanner.ViewModel
         [RelayCommand]
         private async Task Search()
         {
-            Console.WriteLine("hoi");
             if (string.IsNullOrWhiteSpace(_station))
             {
                 Console.WriteLine("Please enter valid station names.");
@@ -110,6 +107,7 @@ namespace Routeplanner.ViewModel
 
             try
             {
+                Loading = true;
                 await Task.Run(async () => {
                     string station = await _stationTable.NameToCode(_station);
 
@@ -121,7 +119,7 @@ namespace Routeplanner.ViewModel
 
                     Console.Write(response);
                     JsonDocument apiResponse = JsonDocument.Parse(response);
-                    List<Departure> departures = ExtractDeparturesFromApiResponse(apiResponse, _station);
+                    List<Departure> departures = _departureService.ExtractDeparturesFromApiResponse(apiResponse, _station);
                     MainThread.BeginInvokeOnMainThread(() => {
                         if (_Departures.Count != 0)
                             _Departures.Clear();
@@ -129,6 +127,7 @@ namespace Routeplanner.ViewModel
                         {
                             _Departures.Add(departure);
                         }
+                        Loading = false;
                     });
                 });
             }
@@ -137,99 +136,7 @@ namespace Routeplanner.ViewModel
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-        public static List<Departure> ExtractDeparturesFromApiResponse(JsonDocument responseData, string currentStation)
-        {
-            List<Departure> departuresList = new List<Departure>();
-
-            try
-            {
-                // Add logging to track method calls
-                Console.WriteLine("Starting ExtractDeparturesFromApiResponse");
-
-                // Get the departures array
-                JsonElement departuresArray = responseData.RootElement.GetProperty("payload").GetProperty("departures");
-
-                // Track for debugging
-                Console.WriteLine($"Processing {departuresArray.GetArrayLength()} departures");
-
-                // Iterate through all departures in the response
-                for (int i = 0; i < departuresArray.GetArrayLength(); i++)
-                {
-                    Console.WriteLine($"Processing departure {i + 1}");
-                    var departureData = departuresArray[i];
-
-                    DateTime time = DateTime.Parse(departureData.GetProperty("actualDateTime").GetString());
-                    string formattedTime = time.ToString("HH:mm");
-
-                    try
-                    {
-                        // Create a new Departure object for each departure in the API response
-                        Departure departure = new Departure
-                        {
-                            Time = TimeSpan.Parse(formattedTime),
-                            Origin = currentStation,
-                            Destination = departureData.GetProperty("direction").GetString(),
-                            TrainType = departureData.GetProperty("product").GetProperty("longCategoryName").GetString(),
-                            Track = departureData.GetProperty("actualTrack").GetString(),
-                            Stops = new List<DepartureStop>()
-                        };
-
-                        // Process all route stations for this departure
-                        ProcessRouteStationsForDeparture(departureData, departure, currentStation);
-
-                        // Add the complete departure to our list
-                        departuresList.Add(departure);
-                        Console.WriteLine($"Departure {i + 1} processed with {departure.Stops.Count} stops");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error processing departure {i + 1}: {ex.Message}");
-                        // Continue with the next departure
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error in ExtractDeparturesFromApiResponse: {ex.Message}");
-            }
-
-            return departuresList;
-        }
-
-        private static void ProcessRouteStationsForDeparture(JsonElement departureData, Departure departure, string currentStation)
-        {
-            // start station
-            departure.Stops.Add(new DepartureStop { StopName = currentStation });
-            Console.WriteLine($"Added origin stop: {currentStation}");
-
-            // Check if route stations are available
-            if (departureData.TryGetProperty("routeStations", out JsonElement routeStations) &&
-                routeStations.GetArrayLength() > 0)
-            {
-                Console.WriteLine($"Processing {routeStations.GetArrayLength()} route stations for departure");
-
-                // Process intermediate stops
-                for (int k = 0; k < routeStations.GetArrayLength(); k++)
-                {
-                    var station = routeStations[k];
-                    string stationName = station.GetProperty("mediumName").GetString();
-
-                    departure.Stops.Add(new DepartureStop { StopName = stationName });
-                    Console.WriteLine($"Added intermediate stop: {stationName}");
-
-                }
-            }
-            else
-            {
-                Console.WriteLine("No route stations found for this departure");
-            }
-
-            // Add destination 
-            string destinationName = departureData.GetProperty("direction").GetString();
-            departure.Stops.Add(new DepartureStop { StopName = destinationName });
-            Console.WriteLine($"Added destination stop: {destinationName}");
-        }
-
+        
         private void UpdateSuggestions(string query, bool isStation)
         {
             // Handle empty query
@@ -246,7 +153,8 @@ namespace Routeplanner.ViewModel
             // use station cache to update suggestions
             var results = _stationCache
                .Where(s => s.StartsWith(query, StringComparison.OrdinalIgnoreCase))
-               .Take(10) // limit the number of suggestions
+               .Take(10) // limit the number of suggestion
+               .Distinct()
                .ToList();
 
             if (isStation)

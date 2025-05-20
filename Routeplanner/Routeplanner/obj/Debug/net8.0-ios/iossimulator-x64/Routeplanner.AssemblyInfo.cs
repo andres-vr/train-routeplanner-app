@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Routeplanner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6ac2e02ac4a8ae42fde7ffaf121ab8afe9e55944")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+77f536bb7fe0f405404db9fc7ee13dd13f116fcc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Routeplanner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Routeplanner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
