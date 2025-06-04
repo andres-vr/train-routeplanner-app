@@ -40,14 +40,35 @@
     <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\train.scale-100.png">
-      <PackagePath>train.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
+      <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
+      <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
+      <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
+      <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
+      <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+      <PackagePath>OpenSans-Regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
+      <PackagePath>OpenSans-Semibold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png">
+      <PackagePath>heart.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\route.scale-100.png">
       <PackagePath>route.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\heart.scale-100.png">
-      <PackagePath>heart.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\train.scale-100.png">
+      <PackagePath>train.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.jpg">
       <PackagePath>appiconLargeTile.scale-400.jpg</PackagePath>
@@ -247,6 +268,9 @@
     <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.maui.controls.core\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.dll">
       <PackagePath>Microsoft.Maui.Controls.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.maui.controls.maps\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Maps.dll">
+      <PackagePath>Microsoft.Maui.Controls.Maps.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.maui.controls.xaml\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.dll">
       <PackagePath>Microsoft.Maui.Controls.Xaml.dll</PackagePath>
     </AppxPackagedFile>
@@ -261,6 +285,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
       <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.maui.maps\8.0.100\lib\net8.0-windows10.0.19041\Microsoft.Maui.Maps.dll">
+      <PackagePath>Microsoft.Maui.Maps.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\andre\.nuget\packages\microsoft.windowsappsdk\1.5.240802000\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>

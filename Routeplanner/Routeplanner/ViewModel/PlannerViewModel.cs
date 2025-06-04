@@ -67,7 +67,10 @@ namespace Routeplanner.ViewModel
         [ObservableProperty]
         public bool _loading;
 
-        public PlannerViewModel(ITripService tripService, StationTable stationTable, RouteCacheTable routeCacheTable, SavedTripsTable savedTripsTable)
+        public PlannerViewModel(ITripService tripService, 
+            StationTable stationTable,
+            RouteCacheTable routeCacheTable, 
+            SavedTripsTable savedTripsTable)
         {
             _tripService = tripService;
             _stationTable = stationTable;
@@ -195,7 +198,6 @@ namespace Routeplanner.ViewModel
                     });
 
                     // Search query
-                    //string startCode = await _stationTable.NameToCode(Origin);
                     string startCode = await _stationTable.NameToCode(Origin);
                     string destinationCode = await _stationTable.NameToCode(Destination);
                     Console.WriteLine(startCode, destinationCode);

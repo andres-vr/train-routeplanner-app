@@ -7,6 +7,7 @@ using Routeplanner.Services.Database;
 using Routeplanner.Services.Departures;
 using Routeplanner.Services.Planner;
 using Routeplanner.ViewModel;
+using Microsoft.Maui.Maps;
 
 namespace Routeplanner
 {
@@ -22,8 +23,8 @@ namespace Routeplanner
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
-            //.UseMauiMaps();
+                })
+            .UseMauiMaps();
             builder.UseMauiCommunityToolkit();
 
             // Pages

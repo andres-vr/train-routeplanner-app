@@ -1,3 +1,5 @@
+OpenSans-Regular.ttf
+OpenSans-Semibold.ttf
 appicon.ico
 appiconLargeTile.scale-100.jpg
 appiconLargeTile.scale-125.jpg
@@ -47,4 +49,9 @@ appiconWideTile.scale-400.jpg
 heart.scale-100.png
 route.scale-100.png
 train.scale-100.png
+splashSplashScreen.scale-100.png
+splashSplashScreen.scale-125.png
+splashSplashScreen.scale-150.png
+splashSplashScreen.scale-200.png
+splashSplashScreen.scale-400.png
 AboutAssets.txt

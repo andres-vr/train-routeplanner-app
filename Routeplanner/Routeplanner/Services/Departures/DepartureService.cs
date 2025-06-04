@@ -146,7 +146,6 @@ namespace Routeplanner.Services.Departures
                 coordinates[i] = coordsArray;
             }
             departure.coords = coordinates;
-            Console.WriteLine(response);
             Console.WriteLine($"Added destination stop: {destinationName}");
         }
     }

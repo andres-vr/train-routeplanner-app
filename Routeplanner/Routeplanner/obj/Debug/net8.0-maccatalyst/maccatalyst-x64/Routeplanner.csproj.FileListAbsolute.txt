@@ -55,10 +55,12 @@ C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Primitives.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.Compatibility.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.dll
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.Maps.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.Xaml.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Essentials.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Graphics.dll
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Maps.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Newtonsoft.Json.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\SQLite-net.dll
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\SQLiteNetExtensions.dll
@@ -313,9 +315,9 @@ C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.inputs
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\heart.png
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\route.png
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\train.png
-C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\heart.png
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.jpg
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.jpg
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.jpg
@@ -330,7 +332,10 @@ C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
+C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
 C:\Apps\Github_RoutePlanner\train-routeplanner-app\Routeplanner\Routeplanner\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items

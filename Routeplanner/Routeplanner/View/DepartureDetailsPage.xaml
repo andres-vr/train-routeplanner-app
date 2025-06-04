@@ -41,7 +41,8 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <!--<maps:Map x:Name="DepartureMap" />-->
+                    <maps:Map x:Name="DepartureMap" 
+                              HeightRequest="300"/>
                 </StackLayout>
             </ScrollView>
         </VerticalStackLayout>
